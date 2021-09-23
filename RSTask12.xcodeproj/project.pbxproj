@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3F37C85426FC6867009F4EF4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85326FC6867009F4EF4 /* Assets.swift */; };
+		3F37C85626FC7705009F4EF4 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85526FC7705009F4EF4 /* GlassView.swift */; };
+		3F37C85B26FC7D42009F4EF4 /* WalletListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85926FC7D42009F4EF4 /* WalletListController.swift */; };
+		3F37C85C26FC7D42009F4EF4 /* WalletListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F37C85A26FC7D42009F4EF4 /* WalletListController.xib */; };
+		3F37C85E26FC831F009F4EF4 /* GlassBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85D26FC831F009F4EF4 /* GlassBar.swift */; };
+		3F37C86026FC8352009F4EF4 /* GlassBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F37C85F26FC8352009F4EF4 /* GlassBar.xib */; };
+		3F37C86326FC89D4009F4EF4 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F37C86226FC89D4009F4EF4 /* Montserrat-Medium.ttf */; };
+		3F37C86526FC89E0009F4EF4 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F37C86426FC89E0009F4EF4 /* Montserrat-SemiBold.ttf */; };
 		840FB10026FB8E3E0088FAF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FB0FF26FB8E3E0088FAF1 /* AppDelegate.swift */; };
 		840FB10226FB8E3E0088FAF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FB10126FB8E3E0088FAF1 /* SceneDelegate.swift */; };
 		840FB10A26FB8E3E0088FAF1 /* RSTask12.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 840FB10826FB8E3E0088FAF1 /* RSTask12.xcdatamodeld */; };
@@ -28,6 +35,13 @@
 
 /* Begin PBXFileReference section */
 		3F37C85326FC6867009F4EF4 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		3F37C85526FC7705009F4EF4 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlassView.swift; path = RSTask12/Resources/GlassView.swift; sourceTree = SOURCE_ROOT; };
+		3F37C85926FC7D42009F4EF4 /* WalletListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListController.swift; sourceTree = "<group>"; };
+		3F37C85A26FC7D42009F4EF4 /* WalletListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletListController.xib; sourceTree = "<group>"; };
+		3F37C85D26FC831F009F4EF4 /* GlassBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassBar.swift; sourceTree = "<group>"; };
+		3F37C85F26FC8352009F4EF4 /* GlassBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlassBar.xib; sourceTree = "<group>"; };
+		3F37C86226FC89D4009F4EF4 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		3F37C86426FC89E0009F4EF4 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		840FB0FC26FB8E3E0088FAF1 /* RSTask12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSTask12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840FB0FF26FB8E3E0088FAF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840FB10126FB8E3E0088FAF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +72,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F37C85826FC7D05009F4EF4 /* Wallet List */ = {
+			isa = PBXGroup;
+			children = (
+				3F37C85926FC7D42009F4EF4 /* WalletListController.swift */,
+				3F37C85A26FC7D42009F4EF4 /* WalletListController.xib */,
+			);
+			path = "Wallet List";
+			sourceTree = "<group>";
+		};
+		3F37C86126FC89AE009F4EF4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3F37C86426FC89E0009F4EF4 /* Montserrat-SemiBold.ttf */,
+				3F37C86226FC89D4009F4EF4 /* Montserrat-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		840FB0F326FB8E3E0088FAF1 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +142,9 @@
 		840FB13C26FB8FB30088FAF1 /* Custom View */ = {
 			isa = PBXGroup;
 			children = (
+				3F37C85526FC7705009F4EF4 /* GlassView.swift */,
+				3F37C85D26FC831F009F4EF4 /* GlassBar.swift */,
+				3F37C85F26FC8352009F4EF4 /* GlassBar.xib */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -117,6 +152,7 @@
 		840FB13D26FB8FC00088FAF1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3F37C85826FC7D05009F4EF4 /* Wallet List */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -131,6 +167,7 @@
 		840FB13F26FB8FE30088FAF1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3F37C86126FC89AE009F4EF4 /* Fonts */,
 				840FB11026FB8E480088FAF1 /* Info.plist */,
 				840FB10D26FB8E480088FAF1 /* LaunchScreen.storyboard */,
 				840FB10B26FB8E480088FAF1 /* Assets.xcassets */,
@@ -219,7 +256,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F37C86526FC89E0009F4EF4 /* Montserrat-SemiBold.ttf in Resources */,
+				3F37C86026FC8352009F4EF4 /* GlassBar.xib in Resources */,
+				3F37C86326FC89D4009F4EF4 /* Montserrat-Medium.ttf in Resources */,
 				840FB10F26FB8E480088FAF1 /* LaunchScreen.storyboard in Resources */,
+				3F37C85C26FC7D42009F4EF4 /* WalletListController.xib in Resources */,
 				840FB10C26FB8E480088FAF1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,9 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F37C85B26FC7D42009F4EF4 /* WalletListController.swift in Sources */,
 				840FB10A26FB8E3E0088FAF1 /* RSTask12.xcdatamodeld in Sources */,
 				840FB10026FB8E3E0088FAF1 /* AppDelegate.swift in Sources */,
+				3F37C85626FC7705009F4EF4 /* GlassView.swift in Sources */,
 				3F37C85426FC6867009F4EF4 /* Assets.swift in Sources */,
+				3F37C85E26FC831F009F4EF4 /* GlassBar.swift in Sources */,
 				840FB10226FB8E3E0088FAF1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9G6V47L895;
 				INFOPLIST_FILE = RSTask12/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9G6V47L895;
 				INFOPLIST_FILE = RSTask12/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
