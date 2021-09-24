@@ -14,8 +14,8 @@ class GlassBar: UIView {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var contentView: UIView!
 
-    @IBOutlet var leadingLabelConstraint: NSLayoutConstraint!
-    @IBOutlet var buttonToLabelConstraint: NSLayoutConstraint!
+    @IBOutlet private var leadingLabelConstraint: NSLayoutConstraint!
+    @IBOutlet private var buttonToLabelConstraint: NSLayoutConstraint!
     
     @IBInspectable var leadingImage: UIImage? {
         willSet {

@@ -9,10 +9,15 @@ import UIKit
 
 class CollectionController: UIViewController {
 
+    private let glassBar = GlassBar()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+}
+
+protocol CollectionContollerViewModelling {
+    
 }

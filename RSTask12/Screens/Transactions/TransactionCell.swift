@@ -14,9 +14,12 @@ class TransactionCell: UICollectionViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+       
+    func configure(with viewModel: TransactionCellViewModel) {
+        amountLabel.textColor = viewModel.isWithdrawal ? .amaranthRed : .celadon
+        nameLabel.text = viewModel.purpose
+        imageView.image = viewModel.icon
+        dateLabel.text = viewModel.date
     }
-
+    
 }
