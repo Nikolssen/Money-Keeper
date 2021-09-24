@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsController" customModule="RSTask12" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="1hA-fO-GFj">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCe-8q-v3v" customClass="GlassBar" customModule="RSTask12" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="374" height="75"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="vNz-nc-S3j"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="circle.back"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Edit wallet"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="circle.trash"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kg3-qU-7LE" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
+                    <rect key="frame" x="20" y="187" width="374" height="229"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="858-TZ-1IZ" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
+                            <rect key="frame" x="25" y="71" width="324" height="128"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMl-VB-fkn">
+                                    <rect key="frame" x="21" y="8" width="278" height="112"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.compact.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tzT-di-RCb">
+                                    <rect key="frame" x="300" y="35" width="23" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="y10-8k-ddF"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6p-x6-l05">
+                            <rect key="frame" x="25" y="21" width="154" height="30"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                            <color key="textColor" name="Rick Black FOGRA 29"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <constraints>
+                        <constraint firstItem="858-TZ-1IZ" firstAttribute="leading" secondItem="kg3-qU-7LE" secondAttribute="leading" constant="25" id="6sx-DO-Ibp"/>
+                        <constraint firstItem="m6p-x6-l05" firstAttribute="top" secondItem="kg3-qU-7LE" secondAttribute="top" constant="21" id="KWs-Za-yRw"/>
+                        <constraint firstItem="m6p-x6-l05" firstAttribute="leading" secondItem="kg3-qU-7LE" secondAttribute="leading" constant="25" id="T7m-Rg-TDj"/>
+                        <constraint firstAttribute="bottom" secondItem="858-TZ-1IZ" secondAttribute="bottom" constant="30" id="XTt-2S-CAZ"/>
+                        <constraint firstItem="858-TZ-1IZ" firstAttribute="top" secondItem="m6p-x6-l05" secondAttribute="bottom" constant="20" id="pBD-co-6Ji"/>
+                        <constraint firstItem="858-TZ-1IZ" firstAttribute="centerX" secondItem="kg3-qU-7LE" secondAttribute="centerX" id="rO3-Tc-km9"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blS-Bg-hgd" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
+                    <rect key="frame" x="20" y="439" width="374" height="175"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWs-oh-I58" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
+                            <rect key="frame" x="25" y="71" width="324" height="84"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXz-P9-Vnx">
+                                    <rect key="frame" x="10" y="27" width="53" height="30"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                                    <color key="textColor" name="Rick Black FOGRA 29"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.compact.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XpI-tv-KPb">
+                                    <rect key="frame" x="293" y="24.5" width="23" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstItem="BXz-P9-Vnx" firstAttribute="top" secondItem="gWs-oh-I58" secondAttribute="top" constant="27" id="STo-Rs-rhj"/>
+                                <constraint firstItem="BXz-P9-Vnx" firstAttribute="leading" secondItem="gWs-oh-I58" secondAttribute="leading" constant="10" id="seW-fV-tSz"/>
+                                <constraint firstAttribute="bottom" secondItem="BXz-P9-Vnx" secondAttribute="bottom" constant="27" id="tvK-o8-cZB"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUL-ov-lsC">
+                            <rect key="frame" x="25" y="21" width="112.5" height="30"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                            <color key="textColor" name="Rick Black FOGRA 29"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <constraints>
+                        <constraint firstItem="eUL-ov-lsC" firstAttribute="leading" secondItem="blS-Bg-hgd" secondAttribute="leading" constant="25" id="1hz-VD-uyW"/>
+                        <constraint firstItem="eUL-ov-lsC" firstAttribute="top" secondItem="blS-Bg-hgd" secondAttribute="top" constant="21" id="cZH-mq-7q8"/>
+                        <constraint firstItem="gWs-oh-I58" firstAttribute="top" secondItem="eUL-ov-lsC" secondAttribute="bottom" constant="20" id="e7q-Kl-78o"/>
+                        <constraint firstItem="gWs-oh-I58" firstAttribute="leading" secondItem="blS-Bg-hgd" secondAttribute="leading" constant="25" id="p97-sw-81d"/>
+                        <constraint firstItem="gWs-oh-I58" firstAttribute="centerX" secondItem="blS-Bg-hgd" secondAttribute="centerX" id="qbj-Cf-Ywe"/>
+                        <constraint firstAttribute="bottom" secondItem="gWs-oh-I58" secondAttribute="bottom" constant="20" id="uIQ-eH-Gfr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muu-uj-yLf" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
+                    <rect key="frame" x="20" y="638" width="374" height="180"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8p-xb-zgm" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
+                            <rect key="frame" x="25" y="71" width="324" height="89"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.compact.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wGO-EN-5nY">
+                                    <rect key="frame" x="293" y="24.5" width="23" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHR-7i-4vN">
+                                    <rect key="frame" x="8" y="27" width="35" height="39"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="uHR-7i-4vN" secondAttribute="bottom" constant="23" id="XOu-8G-oh9"/>
+                                <constraint firstItem="uHR-7i-4vN" firstAttribute="leading" secondItem="s8p-xb-zgm" secondAttribute="leading" constant="8" id="XpU-ez-UzF"/>
+                                <constraint firstItem="uHR-7i-4vN" firstAttribute="top" secondItem="s8p-xb-zgm" secondAttribute="top" constant="27" id="mTZ-IW-JV6"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAm-V1-67s">
+                            <rect key="frame" x="25" y="21" width="112.5" height="30"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                            <color key="textColor" name="Rick Black FOGRA 29"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="s8p-xb-zgm" secondAttribute="bottom" constant="20" id="2Mp-MI-aMk"/>
+                        <constraint firstItem="s8p-xb-zgm" firstAttribute="leading" secondItem="muu-uj-yLf" secondAttribute="leading" constant="25" id="SB5-9k-8gj"/>
+                        <constraint firstItem="s8p-xb-zgm" firstAttribute="top" secondItem="UAm-V1-67s" secondAttribute="bottom" constant="20" id="WM3-Zw-16B"/>
+                        <constraint firstItem="UAm-V1-67s" firstAttribute="top" secondItem="muu-uj-yLf" secondAttribute="top" constant="21" id="WUE-FU-Oy3"/>
+                        <constraint firstItem="s8p-xb-zgm" firstAttribute="centerX" secondItem="muu-uj-yLf" secondAttribute="centerX" id="tc8-xA-ZCl"/>
+                        <constraint firstItem="UAm-V1-67s" firstAttribute="leading" secondItem="muu-uj-yLf" secondAttribute="leading" constant="25" id="upI-C1-yau"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="separatorColor"/>
+            <constraints>
+                <constraint firstItem="blS-Bg-hgd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4L3-1C-wnr"/>
+                <constraint firstItem="blS-Bg-hgd" firstAttribute="top" secondItem="kg3-qU-7LE" secondAttribute="bottom" constant="23" id="Af5-p0-0rk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="1hA-fO-GFj" secondAttribute="top" constant="44" id="BSq-x3-GVu"/>
+                <constraint firstItem="muu-uj-yLf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="COG-6c-Um6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1hA-fO-GFj" secondAttribute="trailing" id="DcH-HS-jsE"/>
+                <constraint firstItem="RCe-8q-v3v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Eef-KL-hEE"/>
+                <constraint firstItem="kg3-qU-7LE" firstAttribute="top" secondItem="RCe-8q-v3v" secondAttribute="bottom" constant="48" id="ElD-Ph-PTP"/>
+                <constraint firstItem="kg3-qU-7LE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Euo-xi-agS"/>
+                <constraint firstItem="muu-uj-yLf" firstAttribute="top" secondItem="blS-Bg-hgd" secondAttribute="bottom" constant="24" id="WGi-cL-cJ8"/>
+                <constraint firstItem="RCe-8q-v3v" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Y3c-mg-mVD"/>
+                <constraint firstItem="1hA-fO-GFj" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="34" id="Zxf-JM-iMv"/>
+                <constraint firstItem="kg3-qU-7LE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="i99-sx-aqn"/>
+                <constraint firstItem="blS-Bg-hgd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="lZb-Uy-6Wg"/>
+                <constraint firstItem="muu-uj-yLf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="nKp-Jd-fP1"/>
+                <constraint firstItem="RCe-8q-v3v" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ut3-xa-vST"/>
+                <constraint firstItem="1hA-fO-GFj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xbk-oX-KE4"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="129.91071428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.compact.right" catalog="system" width="64" height="128"/>
+        <image name="circle.back" width="40" height="40"/>
+        <image name="circle.trash" width="40" height="40"/>
+        <image name="red" width="512" height="512"/>
+        <namedColor name="Rick Black FOGRA 29">
+            <color red="0.027450980392156862" green="0.062745098039215685" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

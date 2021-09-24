@@ -39,8 +39,8 @@ class GlassView: UIView {
     }()
     
     func commonInit() {
-        layer.addSublayer(shadowLayer)
-        layer.addSublayer(gradientLayer)
+        layer.insertSublayer(shadowLayer, at: 0)
+        layer.insertSublayer(gradientLayer, at: 1)
         layer.addSublayer(borderLayer)
         
         

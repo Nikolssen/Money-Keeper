@@ -17,8 +17,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GlassBar" customModule="RSTask12" customModuleProvider="target">
             <connections>
+                <outlet property="buttonToLabelConstraint" destination="cg9-lG-CZC" id="TeN-S6-DsD"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="VMa-7J-Wwj"/>
                 <outlet property="leadingButton" destination="nXi-YI-o0X" id="PSa-d3-fIH"/>
+                <outlet property="leadingLabelConstraint" destination="bBH-m4-fXn" id="kjM-qk-wD3"/>
                 <outlet property="titleLabel" destination="VMF-r2-Wb6" id="e4J-bf-6sx"/>
                 <outlet property="trailingButton" destination="62R-EW-Zos" id="J7H-7h-NdE"/>
             </connections>
@@ -44,7 +46,9 @@
                                 <constraint firstAttribute="height" constant="40" id="m59-p8-CS7"/>
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="circle.back"/>
+                            <connections>
+                                <action selector="leadingAction:" destination="-1" eventType="touchUpInside" id="sAg-6s-5bI"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62R-EW-Zos">
                             <rect key="frame" x="344" y="17.5" width="40" height="40"/>
@@ -53,7 +57,9 @@
                                 <constraint firstAttribute="width" constant="40" id="yQR-c2-aol"/>
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="circle.plus"/>
+                            <connections>
+                                <action selector="trailingAction:" destination="-1" eventType="touchUpInside" id="PG8-go-LNw"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,6 +67,7 @@
                         <constraint firstItem="62R-EW-Zos" firstAttribute="leading" secondItem="VMF-r2-Wb6" secondAttribute="trailing" constant="20" id="EfV-YQ-xnv"/>
                         <constraint firstItem="VMF-r2-Wb6" firstAttribute="centerY" secondItem="e7W-YM-zOV" secondAttribute="centerY" id="Pxr-b6-kp5"/>
                         <constraint firstAttribute="trailing" secondItem="62R-EW-Zos" secondAttribute="trailing" constant="30" id="SfA-bp-8zW"/>
+                        <constraint firstItem="VMF-r2-Wb6" firstAttribute="leading" secondItem="e7W-YM-zOV" secondAttribute="leading" constant="90" id="bBH-m4-fXn"/>
                         <constraint firstItem="VMF-r2-Wb6" firstAttribute="leading" secondItem="nXi-YI-o0X" secondAttribute="trailing" constant="20" id="cg9-lG-CZC"/>
                         <constraint firstItem="62R-EW-Zos" firstAttribute="centerY" secondItem="e7W-YM-zOV" secondAttribute="centerY" id="fKN-xK-4vk"/>
                         <constraint firstItem="nXi-YI-o0X" firstAttribute="leading" secondItem="e7W-YM-zOV" secondAttribute="leading" constant="30" id="ihw-vU-lQw"/>
@@ -80,8 +87,6 @@
         </view>
     </objects>
     <resources>
-        <image name="circle.back" width="40" height="40"/>
-        <image name="circle.plus" width="40" height="40"/>
         <namedColor name="Rick Black FOGRA 29">
             <color red="0.027450980392156862" green="0.062745098039215685" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
