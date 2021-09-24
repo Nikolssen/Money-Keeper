@@ -43,4 +43,24 @@ extension UIImage {
         UIImage(named: "circle.trash")!
     }
     
+    static var yellowBackground: UIImage {
+        UIImage(named: "yellow")!
+    }
+    
+    static var greenBackground: UIImage {
+        UIImage(named: "green")!
+    }
+    
+    static var blueBackground: UIImage {
+        UIImage(named: "blue")!
+    }
+    
+    static var violetBackground: UIImage {
+        UIImage(named: "violet")!
+    }
+    
+    static var redBackground: UIImage {
+        UIImage(named: "red")!
+    }
+    
 }
