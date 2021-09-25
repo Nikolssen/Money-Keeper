@@ -63,4 +63,56 @@ extension UIImage {
         UIImage(named: "red")!
     }
     
+    static var morningStarBackground: UIImage {
+        UIImage(named: "morningstar")!
+    }
+
+    
+    static var vistaBackground: UIImage {
+        UIImage(named: "vista")!
+    }
+    
+    static var auroraBackground: UIImage {
+        UIImage(named: "aurora")!
+    }
+    
+    static var clothes: UIImage {
+        UIImage(named: "clothes")!
+    }
+    
+    static var entertainment: UIImage {
+        UIImage(named: "entertainment")!
+    }
+    
+    static var food: UIImage {
+        UIImage(named: "food")!
+    }
+    
+    static var healthcare: UIImage {
+        UIImage(named: "healthcare")!
+    }
+    
+    static var other: UIImage {
+        UIImage(named: "other")!
+    }
+
+    static var present: UIImage {
+        UIImage(named: "present")!
+    }
+
+    static var salary: UIImage {
+        UIImage(named: "salary")!
+    }
+    
+    static var study: UIImage {
+        UIImage(named: "study")!
+    }
+    
+    static var tourism: UIImage {
+        UIImage(named: "tourism")!
+    }
+    
+    static var wellness: UIImage {
+        UIImage(named: "wellness")!
+    }
 }

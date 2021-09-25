@@ -13,10 +13,6 @@ class ColorCell: UICollectionViewCell {
     @IBOutlet private var leadingConstraint: NSLayoutConstraint!
     @IBOutlet private var imageView: UIImageView!
     
-    enum ColorTheme {
-        case yellow, red, violet, green, blue
-    }
-    
     override var isSelected: Bool {
         willSet {
             if newValue {
@@ -32,18 +28,7 @@ class ColorCell: UICollectionViewCell {
     }
     
     func configure(with theme: ColorTheme) {
-        switch theme {
-        case .yellow:
-            imageView.image = .yellowBackground
-        case .red:
-            imageView.image = .redBackground
-        case .violet:
-            imageView.image = .violetBackground
-        case .green:
-            imageView.image = .greenBackground
-        case .blue:
-            imageView.image = .blueBackground
-        }
+        imageView.image = theme.image
     }
     
     override func prepareForReuse() {
