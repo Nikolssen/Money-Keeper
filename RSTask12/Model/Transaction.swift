@@ -1,27 +1,35 @@
 //
-//  TransactionCategory.swift
+//  Transaction.swift
 //  RSTask12
 //
-//  Created by Admin on 25.09.2021.
+//  Created by Admin on 26.09.2021.
 //
 
 import Foundation
 import UIKit
 
-enum TransactionCategory {
-    case clothes
-    case food
-    case entertainment
-    case wellness
-    case healthcare
-    case education
-    case tourism
-    case present
-    case salary
-    case other
+struct Transaction {
+    enum Category {
+        case clothes
+        case food
+        case entertainment
+        case wellness
+        case healthcare
+        case education
+        case tourism
+        case present
+        case salary
+        case other
+    }
+    
+    let date: Date
+    let isOutcome: Bool
+    let change: UInt
+    let category: Transaction.Category
 }
 
-extension TransactionCategory {
+
+extension Transaction.Category {
     var icon: UIImage{
         switch self {
         case .clothes:

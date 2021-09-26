@@ -76,6 +76,10 @@ extension UIImage {
         UIImage(named: "aurora")!
     }
     
+    static var romanceBackground: UIImage {
+        UIImage(named: "romance")!
+    }
+    
     static var clothes: UIImage {
         UIImage(named: "clothes")!
     }

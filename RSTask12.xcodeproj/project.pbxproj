@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F2405A526FDE2220011BD49 /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2405A326FDE2220011BD49 /* CollectionController.swift */; };
 		3F2405AC26FDE4900011BD49 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2405AA26FDE4900011BD49 /* ColorCell.swift */; };
 		3F2405AD26FDE4900011BD49 /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2405AB26FDE4900011BD49 /* ColorCell.xib */; };
 		3F2405B026FDE8850011BD49 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2405AE26FDE8850011BD49 /* CurrencyCell.swift */; };
@@ -36,7 +35,8 @@
 		840FB10C26FB8E480088FAF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840FB10B26FB8E480088FAF1 /* Assets.xcassets */; };
 		840FB10F26FB8E480088FAF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840FB10D26FB8E480088FAF1 /* LaunchScreen.storyboard */; };
 		840FB11A26FB8E490088FAF1 /* RSTask12Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FB11926FB8E490088FAF1 /* RSTask12Tests.swift */; };
-		84FED08626FFACD300A5ACA2 /* TransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FED08526FFACD300A5ACA2 /* TransactionCategory.swift */; };
+		841E282F2700F2020022D36F /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E282E2700F2020022D36F /* Wallet.swift */; };
+		841E28332700F2170022D36F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E28322700F2170022D36F /* Transaction.swift */; };
 		84FED08B26FFB07500A5ACA2 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FED08A26FFB07500A5ACA2 /* ColorTheme.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F2405A326FDE2220011BD49 /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
 		3F2405AA26FDE4900011BD49 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		3F2405AB26FDE4900011BD49 /* ColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
 		3F2405AE26FDE8850011BD49 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
@@ -84,7 +83,8 @@
 		840FB11526FB8E490088FAF1 /* RSTask12Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSTask12Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840FB11926FB8E490088FAF1 /* RSTask12Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTask12Tests.swift; sourceTree = "<group>"; };
 		840FB11B26FB8E490088FAF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84FED08526FFACD300A5ACA2 /* TransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategory.swift; sourceTree = "<group>"; };
+		841E282E2700F2020022D36F /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		841E28322700F2170022D36F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		84FED08A26FFB07500A5ACA2 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,14 +106,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F2405A226FDE16E0011BD49 /* CollectionController */ = {
-			isa = PBXGroup;
-			children = (
-				3F2405A326FDE2220011BD49 /* CollectionController.swift */,
-			);
-			path = CollectionController;
-			sourceTree = "<group>";
-		};
 		3F2405A726FDE3B40011BD49 /* Currency */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,7 +239,6 @@
 				3F2405A926FDE4360011BD49 /* Color Themes */,
 				3F2405A826FDE3D40011BD49 /* Transactions */,
 				3F2405A726FDE3B40011BD49 /* Currency */,
-				3F2405A226FDE16E0011BD49 /* CollectionController */,
 				3F7D4F0326FCB4A10086616F /* Wallet Settings */,
 				3F37C85826FC7D05009F4EF4 /* Wallet List */,
 			);
@@ -269,8 +260,9 @@
 		84FED08426FFA8B800A5ACA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				84FED08526FFACD300A5ACA2 /* TransactionCategory.swift */,
 				84FED08A26FFB07500A5ACA2 /* ColorTheme.swift */,
+				841E282E2700F2020022D36F /* Wallet.swift */,
+				841E28322700F2170022D36F /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,16 +382,16 @@
 				3F7D4F0626FCC05F0086616F /* SettingsController.swift in Sources */,
 				3F37C85B26FC7D42009F4EF4 /* WalletListController.swift in Sources */,
 				840FB10A26FB8E3E0088FAF1 /* RSTask12.xcdatamodeld in Sources */,
-				3F2405A526FDE2220011BD49 /* CollectionController.swift in Sources */,
+				841E282F2700F2020022D36F /* Wallet.swift in Sources */,
 				840FB10026FB8E3E0088FAF1 /* AppDelegate.swift in Sources */,
 				3F2405BB26FE139C0011BD49 /* GlassButton.swift in Sources */,
 				84FED08B26FFB07500A5ACA2 /* ColorTheme.swift in Sources */,
 				3F37C85626FC7705009F4EF4 /* GlassView.swift in Sources */,
 				3F7D4EFF26FCA1C40086616F /* WalletCell.swift in Sources */,
 				3F2405BD26FE17AD0011BD49 /* BarButton.swift in Sources */,
+				841E28332700F2170022D36F /* Transaction.swift in Sources */,
 				3F2405B626FDE9E00011BD49 /* TransactionCell.swift in Sources */,
 				3F37C85426FC6867009F4EF4 /* Assets.swift in Sources */,
-				84FED08626FFACD300A5ACA2 /* TransactionCategory.swift in Sources */,
 				3F37C85E26FC831F009F4EF4 /* GlassBar.swift in Sources */,
 				840FB10226FB8E3E0088FAF1 /* SceneDelegate.swift in Sources */,
 			);

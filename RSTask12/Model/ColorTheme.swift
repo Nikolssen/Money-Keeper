@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 enum ColorTheme {
-    case yellow, red, violet, green, blue, vista, aurora, morningStar
+    case yellow, red, violet, green, blue, vista, aurora, morningStar, romance
 }
 
 extension ColorTheme {
@@ -31,6 +31,8 @@ extension ColorTheme {
             return .auroraBackground
         case .morningStar:
             return .morningStarBackground
+        case .romance:
+            return .romanceBackground
         }
     }
 }
