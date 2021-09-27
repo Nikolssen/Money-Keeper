@@ -120,3 +120,21 @@ extension UIImage {
         UIImage(named: "wellness")!
     }
 }
+
+extension UINib {
+    static let walletList: String = "WalletListController"
+    static let walletSettings: String = "WalletSettingsController"
+    
+    static var colorCell: UINib {
+        UINib(nibName: "ColorCell", bundle: nil)
+    }
+    
+    static var transactionCell: UINib {
+        UINib(nibName: "TransactionCell", bundle: nil)
+    }
+    
+    static var currencyCell: UINib {
+        UINib(nibName: "CurrencyCell", bundle: nil)
+    }
+    
+}

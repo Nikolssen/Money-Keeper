@@ -12,10 +12,13 @@ class WalletListController: UIViewController {
     @IBOutlet var glassBar: GlassBar!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var infoLabel: UILabel!
+    
+    var viewModel: WalletListViewModelling!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
 }

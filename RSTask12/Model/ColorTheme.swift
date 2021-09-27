@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum ColorTheme {
+@objc enum ColorTheme: Int32, CaseIterable {
     case yellow, red, violet, green, blue, vista, aurora, morningStar, romance
 }
 
