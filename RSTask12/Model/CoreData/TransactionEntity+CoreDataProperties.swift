@@ -16,10 +16,11 @@ extension TransactionEntity {
         return NSFetchRequest<TransactionEntity>(entityName: "TransactionEntity")
     }
 
+    @NSManaged public var category: Int32
+    @NSManaged public var change: Int64
     @NSManaged public var date: Date?
     @NSManaged public var isOutcome: Bool
-    @NSManaged public var change: Int64
-    @NSManaged public var category: Int32
+    @NSManaged public var wallet: WalletEntity?
 
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 class WalletListController: UIViewController {
-
+    
     @IBOutlet var glassBar: GlassBar!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var infoLabel: UILabel!
@@ -20,5 +20,5 @@ class WalletListController: UIViewController {
 
         
     }
-
+    
 }

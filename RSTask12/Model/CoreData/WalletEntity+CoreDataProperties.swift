@@ -19,24 +19,25 @@ extension WalletEntity {
     @NSManaged public var colorTheme: Int32
     @NSManaged public var currencyCode: String?
     @NSManaged public var title: String?
-    @NSManaged public var relationship: NSSet?
+    @NSManaged public var transactions: NSSet?
+    @NSManaged public var account: AcountEntity?
 
 }
 
-// MARK: Generated accessors for relationship
+// MARK: Generated accessors for transactions
 extension WalletEntity {
 
-    @objc(addRelationshipObject:)
-    @NSManaged public func addToRelationship(_ value: TransactionEntity)
+    @objc(addTransactionsObject:)
+    @NSManaged public func addToTransactions(_ value: TransactionEntity)
 
-    @objc(removeRelationshipObject:)
-    @NSManaged public func removeFromRelationship(_ value: TransactionEntity)
+    @objc(removeTransactionsObject:)
+    @NSManaged public func removeFromTransactions(_ value: TransactionEntity)
 
-    @objc(addRelationship:)
-    @NSManaged public func addToRelationship(_ values: NSSet)
+    @objc(addTransactions:)
+    @NSManaged public func addToTransactions(_ values: NSSet)
 
-    @objc(removeRelationship:)
-    @NSManaged public func removeFromRelationship(_ values: NSSet)
+    @objc(removeTransactions:)
+    @NSManaged public func removeFromTransactions(_ values: NSSet)
 
 }
 
