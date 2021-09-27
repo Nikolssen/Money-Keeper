@@ -7,10 +7,10 @@
 
 import UIKit
 
-class GlassBar: UIView {
+final class GlassBar: UIView {
 
-    @IBOutlet private var leadingButton: UIButton!
-    @IBOutlet private var trailingButton: UIButton!
+    @IBOutlet private var leadingButton: BarButton!
+    @IBOutlet private var trailingButton: BarButton!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var contentView: UIView!
 
@@ -20,7 +20,7 @@ class GlassBar: UIView {
     @IBInspectable var leadingImage: UIImage? {
         willSet {
             leadingButton.setImage(newValue, for: .normal)
-           // leadingButton.setImage(newValue, for: .highlighted)
+            leadingButton.setImage(newValue?.withTintColor(.deepSaffron), for: .highlighted)
             leadingButton.isHidden = (newValue == nil)
             buttonToLabelConstraint.isActive = (newValue != nil)
             leadingLabelConstraint.isActive = (newValue == nil)
@@ -30,7 +30,7 @@ class GlassBar: UIView {
     @IBInspectable var trailingImage: UIImage? {
         willSet {
             trailingButton.setImage(newValue, for: .normal)
-          //  trailingButton.setImage(newValue, for: .highlighted)
+            trailingButton.setImage(newValue?.withTintColor(.deepSaffron), for: .highlighted)
             trailingButton.isHidden = (newValue == nil)
         }
     }

@@ -38,6 +38,7 @@ class GlassButton: UIButton {
     
     func commonInit() {
         let glassView = GlassView()
+        glassView.isUserInteractionEnabled = false
         glassView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(glassView)
         NSLayoutConstraint.activate([

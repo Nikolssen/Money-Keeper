@@ -16,6 +16,8 @@
 		3F2405B926FE07B00011BD49 /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2405B826FE07B00011BD49 /* TransactionCellViewModel.swift */; };
 		3F2405BB26FE139C0011BD49 /* GlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2405BA26FE139C0011BD49 /* GlassButton.swift */; };
 		3F2405BD26FE17AD0011BD49 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2405BC26FE17AD0011BD49 /* BarButton.swift */; };
+		3F246E2A2701ADD7000D1C61 /* GlassSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F246E292701ADD7000D1C61 /* GlassSegmentControl.swift */; };
+		3F246E2C2701ADE9000D1C61 /* GlassSegmentControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F246E2B2701ADE9000D1C61 /* GlassSegmentControl.xib */; };
 		3F37C85426FC6867009F4EF4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85326FC6867009F4EF4 /* Assets.swift */; };
 		3F37C85626FC7705009F4EF4 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85526FC7705009F4EF4 /* GlassView.swift */; };
 		3F37C85B26FC7D42009F4EF4 /* WalletListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85926FC7D42009F4EF4 /* WalletListController.swift */; };
@@ -60,6 +62,8 @@
 		3F2405B826FE07B00011BD49 /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
 		3F2405BA26FE139C0011BD49 /* GlassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassButton.swift; sourceTree = "<group>"; };
 		3F2405BC26FE17AD0011BD49 /* BarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
+		3F246E292701ADD7000D1C61 /* GlassSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassSegmentControl.swift; sourceTree = "<group>"; };
+		3F246E2B2701ADE9000D1C61 /* GlassSegmentControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlassSegmentControl.xib; sourceTree = "<group>"; };
 		3F37C85326FC6867009F4EF4 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		3F37C85526FC7705009F4EF4 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlassView.swift; path = RSTask12/Resources/GlassView.swift; sourceTree = SOURCE_ROOT; };
 		3F37C85926FC7D42009F4EF4 /* WalletListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListController.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				3F37C85F26FC8352009F4EF4 /* GlassBar.xib */,
 				3F2405BA26FE139C0011BD49 /* GlassButton.swift */,
 				3F2405BC26FE17AD0011BD49 /* BarButton.swift */,
+				3F246E292701ADD7000D1C61 /* GlassSegmentControl.swift */,
+				3F246E2B2701ADE9000D1C61 /* GlassSegmentControl.xib */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 				3F37C85C26FC7D42009F4EF4 /* WalletListController.xib in Resources */,
 				3F7D4F0726FCC05F0086616F /* SettingsController.xib in Resources */,
 				840FB10C26FB8E480088FAF1 /* Assets.xcassets in Resources */,
+				3F246E2C2701ADE9000D1C61 /* GlassSegmentControl.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F246E2A2701ADD7000D1C61 /* GlassSegmentControl.swift in Sources */,
 				3F2405B026FDE8850011BD49 /* CurrencyCell.swift in Sources */,
 				3F2405B926FE07B00011BD49 /* TransactionCellViewModel.swift in Sources */,
 				3F2405AC26FDE4900011BD49 /* ColorCell.swift in Sources */,
