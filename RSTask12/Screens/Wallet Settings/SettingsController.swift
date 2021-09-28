@@ -59,3 +59,17 @@ extension SettingsController: UITextFieldDelegate {
         return true
     }
 }
+
+
+protocol SettingsViewModelling {
+    var glassBarTrailingImage: UIImage? { get }
+    var glassBarTrailingAction: (() -> Void)? { get }
+    var glassBarLeadingAction: (() -> Void)? { get }
+    func isTitleValid(title: String) -> Bool
+    func showColors()
+    func showCurrencies()
+}
+
+protocol SettingsViewModelDelegate: AnyObject {
+    func setBackgroundImage(image: UIImage)
+}

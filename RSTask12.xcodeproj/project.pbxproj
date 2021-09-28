@@ -34,6 +34,8 @@
 		3F2AE9FF2702E81300951141 /* WalletCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE9FE2702E81300951141 /* WalletCellViewModel.swift */; };
 		3F2AEA012702F6A600951141 /* NewWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AEA002702F6A600951141 /* NewWalletViewModel.swift */; };
 		3F2AEA032702F6D400951141 /* WalletEditingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AEA022702F6D400951141 /* WalletEditingViewModel.swift */; };
+		3F2AEA0727030A9100951141 /* WalletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AEA0527030A9100951141 /* WalletController.swift */; };
+		3F2AEA0827030A9100951141 /* WalletController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2AEA0627030A9100951141 /* WalletController.xib */; };
 		3F37C85426FC6867009F4EF4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85326FC6867009F4EF4 /* Assets.swift */; };
 		3F37C85626FC7705009F4EF4 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85526FC7705009F4EF4 /* GlassView.swift */; };
 		3F37C85B26FC7D42009F4EF4 /* WalletListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85926FC7D42009F4EF4 /* WalletListController.swift */; };
@@ -96,6 +98,8 @@
 		3F2AE9FE2702E81300951141 /* WalletCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellViewModel.swift; sourceTree = "<group>"; };
 		3F2AEA002702F6A600951141 /* NewWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletViewModel.swift; sourceTree = "<group>"; };
 		3F2AEA022702F6D400951141 /* WalletEditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletEditingViewModel.swift; sourceTree = "<group>"; };
+		3F2AEA0527030A9100951141 /* WalletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletController.swift; sourceTree = "<group>"; };
+		3F2AEA0627030A9100951141 /* WalletController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletController.xib; sourceTree = "<group>"; };
 		3F37C85326FC6867009F4EF4 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		3F37C85526FC7705009F4EF4 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlassView.swift; path = RSTask12/Resources/GlassView.swift; sourceTree = SOURCE_ROOT; };
 		3F37C85926FC7D42009F4EF4 /* WalletListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,22 @@
 				3F246E3E2701F76C000D1C61 /* CollectionController.swift */,
 			);
 			path = "Generic Controller";
+			sourceTree = "<group>";
+		};
+		3F2AEA0427030A7300951141 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				3F2AEA0527030A9100951141 /* WalletController.swift */,
+				3F2AEA0627030A9100951141 /* WalletController.xib */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		3F2AEA09270311C200951141 /* Transaction Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Transaction Settings";
 			sourceTree = "<group>";
 		};
 		3F37C85826FC7D05009F4EF4 /* Wallet List */ = {
@@ -319,6 +339,8 @@
 		840FB13D26FB8FC00088FAF1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3F2AEA09270311C200951141 /* Transaction Settings */,
+				3F2AEA0427030A7300951141 /* Wallet */,
 				3F246E402701F7B1000D1C61 /* Generic Controller */,
 				3F2405A926FDE4360011BD49 /* Color Themes */,
 				3F2405A826FDE3D40011BD49 /* Transactions */,
@@ -439,6 +461,7 @@
 				3F7D4F0026FCA1C40086616F /* WalletCell.xib in Resources */,
 				3F2405AD26FDE4900011BD49 /* ColorCell.xib in Resources */,
 				3F37C86026FC8352009F4EF4 /* GlassBar.xib in Resources */,
+				3F2AEA0827030A9100951141 /* WalletController.xib in Resources */,
 				3F37C86326FC89D4009F4EF4 /* Montserrat-Medium.ttf in Resources */,
 				3F2405B126FDE8850011BD49 /* CurrencyCell.xib in Resources */,
 				840FB10F26FB8E480088FAF1 /* LaunchScreen.storyboard in Resources */,
@@ -475,6 +498,7 @@
 				3F246E4E27020916000D1C61 /* TransactionEntity+CoreDataProperties.swift in Sources */,
 				3F246E382701EED4000D1C61 /* Coordinator.swift in Sources */,
 				841E282F2700F2020022D36F /* Wallet.swift in Sources */,
+				3F2AEA0727030A9100951141 /* WalletController.swift in Sources */,
 				3F246E4A27020916000D1C61 /* AcountEntity+CoreDataProperties.swift in Sources */,
 				3F246E422701FAFF000D1C61 /* CollectionViewLayout.swift in Sources */,
 				840FB10026FB8E3E0088FAF1 /* AppDelegate.swift in Sources */,
