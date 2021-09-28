@@ -30,6 +30,7 @@
 		3F246E4D27020916000D1C61 /* TransactionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F246E4727020916000D1C61 /* TransactionEntity+CoreDataClass.swift */; };
 		3F246E4E27020916000D1C61 /* TransactionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F246E4827020916000D1C61 /* TransactionEntity+CoreDataProperties.swift */; };
 		3F246E5027020AEB000D1C61 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F246E4F27020AEB000D1C61 /* TextField.swift */; };
+		3F2AE9FC2702DDCA00951141 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE9FB2702DDC900951141 /* Currency.swift */; };
 		3F37C85426FC6867009F4EF4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85326FC6867009F4EF4 /* Assets.swift */; };
 		3F37C85626FC7705009F4EF4 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85526FC7705009F4EF4 /* GlassView.swift */; };
 		3F37C85B26FC7D42009F4EF4 /* WalletListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85926FC7D42009F4EF4 /* WalletListController.swift */; };
@@ -88,6 +89,7 @@
 		3F246E4727020916000D1C61 /* TransactionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3F246E4827020916000D1C61 /* TransactionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F246E4F27020AEB000D1C61 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		3F2AE9FB2702DDC900951141 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		3F37C85326FC6867009F4EF4 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		3F37C85526FC7705009F4EF4 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlassView.swift; path = RSTask12/Resources/GlassView.swift; sourceTree = SOURCE_ROOT; };
 		3F37C85926FC7D42009F4EF4 /* WalletListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListController.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				84FED08A26FFB07500A5ACA2 /* ColorTheme.swift */,
 				841E282E2700F2020022D36F /* Wallet.swift */,
 				841E28322700F2170022D36F /* Transaction.swift */,
+				3F2AE9FB2702DDC900951141 /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				3F37C85626FC7705009F4EF4 /* GlassView.swift in Sources */,
 				3F246E3D2701F285000D1C61 /* CoreDataService.swift in Sources */,
 				3F7D4EFF26FCA1C40086616F /* WalletCell.swift in Sources */,
+				3F2AE9FC2702DDCA00951141 /* Currency.swift in Sources */,
 				3F2405BD26FE17AD0011BD49 /* BarButton.swift in Sources */,
 				3F246E5027020AEB000D1C61 /* TextField.swift in Sources */,
 				3F246E3A2701F1E5000D1C61 /* WalletListViewModel.swift in Sources */,
