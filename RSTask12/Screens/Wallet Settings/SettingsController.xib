@@ -20,6 +20,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsController" customModule="RSTask12" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImageView" destination="1hA-fO-GFj" id="6vG-yf-RdQ"/>
+                <outlet property="colorThemePanel" destination="858-TZ-1IZ" id="pZ0-wg-i6R"/>
+                <outlet property="currencyPanel" destination="gWs-oh-I58" id="asQ-dl-iRC"/>
+                <outlet property="glassBar" destination="RCe-8q-v3v" id="VdL-Nu-6ve"/>
+                <outlet property="scrollView" destination="UlY-qV-Az6" id="wem-E1-97e"/>
+                <outlet property="scrollViewContentBottomConstraint" destination="nm9-ba-EBC" id="qP0-tw-Lin"/>
+                <outlet property="textField" destination="uHR-7i-4vN" id="JpS-do-Du8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -94,32 +101,27 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muu-uj-yLf" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
-                            <rect key="frame" x="20" y="491.5" width="374" height="179.5"/>
+                            <rect key="frame" x="20" y="491.5" width="374" height="183.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8p-xb-zgm" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
-                                    <rect key="frame" x="25" y="70.5" width="324" height="89"/>
+                                    <rect key="frame" x="25" y="70.5" width="324" height="93"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHR-7i-4vN">
-                                            <rect key="frame" x="8" y="27" width="35" height="39"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHR-7i-4vN" customClass="TextField" customModule="RSTask12" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="5" width="308" height="83"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="83" id="PYi-lG-iiq"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.compact.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tPb-yr-RHA">
-                                            <rect key="frame" x="304" y="38.5" width="5" height="12"/>
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="15" id="ENd-i8-GCD"/>
-                                                <constraint firstAttribute="width" constant="5" id="To9-tP-3gm"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="tPb-yr-RHA" secondAttribute="trailing" constant="15" id="4UC-Dz-zll"/>
-                                        <constraint firstItem="tPb-yr-RHA" firstAttribute="centerY" secondItem="s8p-xb-zgm" secondAttribute="centerY" id="Mq1-SF-3Rb"/>
-                                        <constraint firstAttribute="bottom" secondItem="uHR-7i-4vN" secondAttribute="bottom" constant="23" id="XOu-8G-oh9"/>
+                                        <constraint firstAttribute="height" constant="93" id="LKv-lk-AnT"/>
+                                        <constraint firstItem="uHR-7i-4vN" firstAttribute="centerX" secondItem="s8p-xb-zgm" secondAttribute="centerX" id="NPS-up-rQ2"/>
                                         <constraint firstItem="uHR-7i-4vN" firstAttribute="leading" secondItem="s8p-xb-zgm" secondAttribute="leading" constant="8" id="XpU-ez-UzF"/>
-                                        <constraint firstItem="uHR-7i-4vN" firstAttribute="top" secondItem="s8p-xb-zgm" secondAttribute="top" constant="27" id="mTZ-IW-JV6"/>
+                                        <constraint firstItem="uHR-7i-4vN" firstAttribute="top" secondItem="s8p-xb-zgm" secondAttribute="top" constant="5" id="mTZ-IW-JV6"/>
+                                        <constraint firstItem="uHR-7i-4vN" firstAttribute="centerY" secondItem="s8p-xb-zgm" secondAttribute="centerY" id="y69-it-ksG"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAm-V1-67s">

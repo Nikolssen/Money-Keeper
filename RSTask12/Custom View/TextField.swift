@@ -9,28 +9,13 @@ import UIKit
 
 class TextField: UITextField {
 
-    @IBInspectable var paddingLeftCustom: CGFloat {
-        get {
-            return leftView!.frame.size.width
-        }
-        set {
-            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.size.height))
-            leftView = paddingView
-            leftViewMode = .always
-        }
-    }
     
-    @IBInspectable var paddingRightCustom: CGFloat {
-        get {
-            return rightView!.frame.size.width
-        }
-        set {
-            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.size.height))
-            rightView = paddingView
-            rightViewMode = .always
-        }
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        bounds.insetBy(dx: 20, dy: 0)
     }
-    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        bounds.insetBy(dx: 20, dy: 0)
+    }
     @IBInspectable var cornerRadius: CGFloat = 20 { didSet { layer.cornerRadius = cornerRadius } }
     
     override init(frame: CGRect) {
@@ -46,6 +31,9 @@ class TextField: UITextField {
     private func commonInit() {
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
+        layer.cornerRadius = cornerRadius
+        backgroundColor = .clear
+        borderStyle = .none
     }
 
 }

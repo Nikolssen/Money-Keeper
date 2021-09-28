@@ -32,6 +32,8 @@
 		3F246E5027020AEB000D1C61 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F246E4F27020AEB000D1C61 /* TextField.swift */; };
 		3F2AE9FC2702DDCA00951141 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE9FB2702DDC900951141 /* Currency.swift */; };
 		3F2AE9FF2702E81300951141 /* WalletCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AE9FE2702E81300951141 /* WalletCellViewModel.swift */; };
+		3F2AEA012702F6A600951141 /* NewWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AEA002702F6A600951141 /* NewWalletViewModel.swift */; };
+		3F2AEA032702F6D400951141 /* WalletEditingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AEA022702F6D400951141 /* WalletEditingViewModel.swift */; };
 		3F37C85426FC6867009F4EF4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85326FC6867009F4EF4 /* Assets.swift */; };
 		3F37C85626FC7705009F4EF4 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85526FC7705009F4EF4 /* GlassView.swift */; };
 		3F37C85B26FC7D42009F4EF4 /* WalletListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37C85926FC7D42009F4EF4 /* WalletListController.swift */; };
@@ -92,6 +94,8 @@
 		3F246E4F27020AEB000D1C61 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		3F2AE9FB2702DDC900951141 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		3F2AE9FE2702E81300951141 /* WalletCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellViewModel.swift; sourceTree = "<group>"; };
+		3F2AEA002702F6A600951141 /* NewWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletViewModel.swift; sourceTree = "<group>"; };
+		3F2AEA022702F6D400951141 /* WalletEditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletEditingViewModel.swift; sourceTree = "<group>"; };
 		3F37C85326FC6867009F4EF4 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		3F37C85526FC7705009F4EF4 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlassView.swift; path = RSTask12/Resources/GlassView.swift; sourceTree = SOURCE_ROOT; };
 		3F37C85926FC7D42009F4EF4 /* WalletListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListController.swift; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 			children = (
 				3F7D4F0426FCC05F0086616F /* SettingsController.swift */,
 				3F7D4F0526FCC05F0086616F /* SettingsController.xib */,
+				3F2AEA002702F6A600951141 /* NewWalletViewModel.swift */,
+				3F2AEA022702F6D400951141 /* WalletEditingViewModel.swift */,
 			);
 			path = "Wallet Settings";
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 				3F7D4EFF26FCA1C40086616F /* WalletCell.swift in Sources */,
 				3F2AE9FC2702DDCA00951141 /* Currency.swift in Sources */,
 				3F2405BD26FE17AD0011BD49 /* BarButton.swift in Sources */,
+				3F2AEA012702F6A600951141 /* NewWalletViewModel.swift in Sources */,
 				3F2AE9FF2702E81300951141 /* WalletCellViewModel.swift in Sources */,
 				3F246E5027020AEB000D1C61 /* TextField.swift in Sources */,
 				3F246E3A2701F1E5000D1C61 /* WalletListViewModel.swift in Sources */,
@@ -488,6 +495,7 @@
 				3F37C85426FC6867009F4EF4 /* Assets.swift in Sources */,
 				3F246E3F2701F76C000D1C61 /* CollectionController.swift in Sources */,
 				3F37C85E26FC831F009F4EF4 /* GlassBar.swift in Sources */,
+				3F2AEA032702F6D400951141 /* WalletEditingViewModel.swift in Sources */,
 				840FB10226FB8E3E0088FAF1 /* SceneDelegate.swift in Sources */,
 				3F246E4B27020916000D1C61 /* WalletEntity+CoreDataClass.swift in Sources */,
 			);
