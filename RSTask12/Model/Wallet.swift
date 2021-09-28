@@ -13,3 +13,9 @@ struct Wallet {
     var title: String
     var transactions: [Transaction]
 }
+
+extension Wallet {
+    var viewModel: WalletCellViewModel {
+        WalletCellViewModel(title: title, balance: "55", date: "55")
+    }
+}

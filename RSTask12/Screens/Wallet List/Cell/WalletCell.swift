@@ -8,10 +8,35 @@
 import UIKit
 
 class WalletCell: UICollectionViewCell {
-
+    
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var accountLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+    }
+    
+    func configure(with viewModel: WalletCellViewModel) {
+        titleLabel.text = viewModel.title
+        accountLabel.text = viewModel.balance
+        dateLabel.text = viewModel.date
     }
 
+}
+extension WalletCell: InstantiatableCell {
+    static var nib: UINib {
+        UINib(nibName: "WalletCell", bundle: nil)
+    }
+    
+    static var height: CGFloat {
+        208.0
+    }
+    
+    static var reuseIdentifier: String {
+        "WalletCellID"
+    }
+    
 }

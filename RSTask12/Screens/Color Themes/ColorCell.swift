@@ -37,3 +37,19 @@ class ColorCell: UICollectionViewCell {
     }
 
 }
+
+extension ColorCell: InstantiatableCell {
+    static var nib: UINib {
+        UINib(nibName: "ColorCell", bundle: nil)
+    }
+    
+    static var height: CGFloat {
+        160.0
+    }
+    
+    static var reuseIdentifier: String {
+        "ColorCellID"
+    }
+    
+    
+}

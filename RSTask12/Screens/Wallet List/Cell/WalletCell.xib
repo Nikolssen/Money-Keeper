@@ -87,6 +87,11 @@
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="lrT-CK-bB2" secondAttribute="bottom" id="hA3-6q-RNG"/>
             </constraints>
             <size key="customSize" width="392" height="271"/>
+            <connections>
+                <outlet property="accountLabel" destination="CNd-xQ-6fb" id="ZvF-bh-uKz"/>
+                <outlet property="dateLabel" destination="yEH-Zd-IIx" id="dte-uV-JUk"/>
+                <outlet property="titleLabel" destination="7fz-tF-iGw" id="h9d-az-6ds"/>
+            </connections>
             <point key="canvasLocation" x="139.13043478260872" y="145.64732142857142"/>
         </collectionViewCell>
     </objects>

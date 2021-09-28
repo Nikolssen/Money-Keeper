@@ -23,9 +23,10 @@ struct Transaction {
     }
     
     let date: Date
-    let isOutcome: Bool
-    let change: UInt
-    let category: Transaction.Category
+    var isOutcome: Bool
+    var change: UInt
+    var category: Transaction.Category
+    var note: String
 }
 
 

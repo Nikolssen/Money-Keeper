@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalletListController" customModule="RSTask12" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImageView" destination="b6X-vx-eg6" id="lxl-GW-FAo"/>
                 <outlet property="collectionView" destination="9Jy-dG-ZTA" id="eo6-xy-fUg"/>
                 <outlet property="glassBar" destination="V38-tg-UeO" id="cjR-C8-FBX"/>
                 <outlet property="infoLabel" destination="Nz2-I2-wbi" id="jy6-JK-Zgv"/>
@@ -54,7 +55,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No wallets created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz2-I2-wbi">
-                    <rect key="frame" x="93" y="434.5" width="230" height="29.5"/>
+                    <rect key="frame" x="108" y="435" width="200" height="28"/>
                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

@@ -11,8 +11,8 @@ enum Currency {
         Locale.commonISOCurrencyCodes
     }
     
-    static func symbol(for code: String) -> String {
-        NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: .currencySymbol, value: code) ?? code
+    static func symbol(for code: String) -> String? {
+        NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: .currencySymbol, value: code)
     }
     static func name(for code: String) -> String {
         Locale.current.localizedString(forCurrencyCode: code) ?? code

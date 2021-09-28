@@ -15,3 +15,19 @@ class CurrencyCell: UICollectionViewCell {
     }
 
 }
+
+extension CurrencyCell: InstantiatableCell {
+    static var reuseIdentifier: String {
+        "CurrencyCellID"
+    }
+    
+    static var nib: UINib {
+        UINib(nibName: "CurrencyCell", bundle: nil)
+    }
+    
+    static var height: CGFloat {
+        75.0
+    }
+    
+    
+}

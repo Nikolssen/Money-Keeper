@@ -23,3 +23,19 @@ class TransactionCell: UICollectionViewCell {
     }
     
 }
+
+extension TransactionCell: InstantiatableCell {
+    static var nib: UINib {
+        UINib(nibName: "TransactionCell", bundle: nil)
+    }
+    
+    static var height: CGFloat {
+        90.0
+    }
+    
+    static var reuseIdentifier: String {
+        "TransactionCellID"
+    }
+    
+    
+}
