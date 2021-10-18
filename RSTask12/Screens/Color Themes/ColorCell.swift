@@ -23,7 +23,10 @@ class ColorCell: UICollectionViewCell {
                 leadingConstraint.constant = 0
                 topConstraint.constant = 0
             }
-            setNeedsLayout()
+            UIView.animate(withDuration: 0.4, animations: {
+                self.setNeedsLayout()
+            })
+            
         }
     }
     
@@ -34,6 +37,8 @@ class ColorCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
+        leadingConstraint.constant = 0
+        topConstraint.constant = 0
     }
 
 }

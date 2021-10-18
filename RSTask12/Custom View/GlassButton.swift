@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GlassButton: UIButton {
+final class GlassButton: UIButton {
     
     @objc enum GlassButtonStyle: Int {
         case destructive

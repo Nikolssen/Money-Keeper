@@ -7,25 +7,51 @@
 
 import UIKit
 
-class SettingsController: UIViewController {
+final class SettingsController: UIViewController {
 
     @IBOutlet private var glassBar: GlassBar!
-    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var colorThemePanel: GlassView!
     @IBOutlet private var currencyPanel: GlassView!
-    @IBOutlet var backgroundImageView: UIImageView!
+    @IBOutlet private var backgroundImageView: UIImageView!
     @IBOutlet private var textField: TextField!
-    @IBOutlet var scrollViewContentBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private var currencyLabel: UILabel!
+    @IBOutlet private var scrollViewContentBottomConstraint: NSLayoutConstraint!
+
+    @IBOutlet private var codeLabel: UILabel!
+    @IBOutlet private var colorThemeImageView: UIImageView!
+    
+    var viewModel: SettingsViewModelling!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
-
+        colorThemePanel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showColorThemes)))
+        currencyPanel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showCurrencies)))
+        glassBar.trailingButtonStyle = .destructive
+        glassBar.trailingHandler = viewModel.glassBarTrailingAction
+        glassBar.trailingImage = viewModel.glassBarTrailingImage
+        
+        
+        glassBar.leadingHandler = viewModel.glassBarLeadingAction
+        glassBar.title = viewModel.glassBarTitle
+        textField.text = viewModel.currentTitle
+        
+        textField.delegate = self
+        textField.addTarget(self, action: #selector(setTitle(sender:)), for: .editingChanged)
     }
+
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
+        
+        currencyLabel.text = viewModel.currencyDescription
+        codeLabel.text = viewModel.currencyCode
+        colorThemeImageView.image = viewModel.currentThemeImage
+        backgroundImageView.image = viewModel.currentThemeImage
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,8 +61,15 @@ class SettingsController: UIViewController {
     }
     
     
-    @objc func hideKeyboard() {
+    @objc private func hideKeyboard() {
         view.endEditing(true)
+    }
+    @objc private func showColorThemes() {
+        viewModel.showColors()
+    }
+    
+    @objc private func showCurrencies() {
+        viewModel.showCurrencies()
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
@@ -58,6 +91,28 @@ extension SettingsController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+   
+    @objc func setTitle(sender: UITextField) {
+        viewModel.currentTitle = sender.text ?? ""
+    }
+}
+
+extension SettingsController: SettingsViewModelDelegate{
+    func setBackgroundImage(image: UIImage) {
+        backgroundImageView.setAnimatedly(image: image)
+    }
+    
+    func showAlert(title: String, message: String, leftButtonTitle: String, rightButtonTitle: String, leftButtonAction: @escaping ()->Void, rightButtonAction: @escaping () -> Void) {
+        let glassAlert = GlassAlertController(nibName: "GlassAlertController", bundle: nil)
+        glassAlert.loadViewIfNeeded()
+        glassAlert.titleLabel.text = title
+        glassAlert.messageLabel.text = message
+        glassAlert.leftButton.setTitle(leftButtonTitle, for: .normal)
+        glassAlert.rightButton.setTitle(rightButtonTitle, for: .normal)
+        glassAlert.leftButtonAction = leftButtonAction
+        glassAlert.rightButtonAction = rightButtonAction
+        glassAlert.show(on: self)
+    }
 }
 
 
@@ -65,11 +120,25 @@ protocol SettingsViewModelling {
     var glassBarTrailingImage: UIImage? { get }
     var glassBarTrailingAction: (() -> Void)? { get }
     var glassBarLeadingAction: (() -> Void)? { get }
-    func isTitleValid(title: String) -> Bool
+    var glassBarTitle: String { get }
+    var currentTitle: String {get set}
+    var currentThemeImage: UIImage { get }
+    var currencyDescription: String { get }
+    var currencyCode: String { get }
+    var delegate: SettingsViewModelDelegate? {get set}
     func showColors()
     func showCurrencies()
 }
 
 protocol SettingsViewModelDelegate: AnyObject {
     func setBackgroundImage(image: UIImage)
+    func showAlert(title: String, message: String, leftButtonTitle: String, rightButtonTitle: String, leftButtonAction: @escaping ()->Void, rightButtonAction: @escaping () -> Void)
+}
+
+protocol WalletSettingsCoordinator: AnyObject {
+    func goBack()
+    func popToWalletList()
+    func showCurrencies(code: String, callback: @escaping (String) -> Void)
+    func showColorThemes(callback: @escaping (ColorTheme) -> Void)
+    var colorTheme: ColorTheme {get set}
 }

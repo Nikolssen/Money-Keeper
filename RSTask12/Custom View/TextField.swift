@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TextField: UITextField {
+final class TextField: UITextField {
 
     
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
@@ -34,6 +34,9 @@ class TextField: UITextField {
         layer.cornerRadius = cornerRadius
         backgroundColor = .clear
         borderStyle = .none
+        tintColor = .rickBlack
+        font = .montserratSemibold24
+        textColor = .rickBlack
     }
 
 }

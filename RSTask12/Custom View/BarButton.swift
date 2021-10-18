@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BarButton: UIButton {
+final class BarButton: UIButton {
 
     @objc enum BarButtonStyle: Int {
         case normal, destructive

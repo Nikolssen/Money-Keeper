@@ -9,16 +9,16 @@ import UIKit
 
 final class GlassSegmentControl: UIControl {
 
-    var value: Bool = true {
+    var isOutcome: Bool = true {
         willSet {
             if newValue {
-                leadingButtonConstraint.priority = UILayoutPriority(rawValue: 950)
-                trailingButtonConstraint.priority = UILayoutPriority(rawValue: 750)
+                leadingButtonConstraint.constant = 2
+                trailingButtonConstraint.constant = bounds.width / 2
 
             }
             else {
-               leadingButtonConstraint.priority = UILayoutPriority(rawValue: 750)
-               trailingButtonConstraint.priority = UILayoutPriority(rawValue: 950)
+                leadingButtonConstraint.constant = bounds.width / 2
+                trailingButtonConstraint.constant = 2
             }
             UIView.animate(withDuration: 0.5) {
                 self.layoutIfNeeded()
@@ -35,18 +35,18 @@ final class GlassSegmentControl: UIControl {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        incomeButton.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 13)
-        outcomeButton.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 13)
-        value = true
+        incomeButton.titleLabel?.font = .montserratMedium13
+        outcomeButton.titleLabel?.font = .montserratMedium13
+        isOutcome = true
     }
     
     @IBAction private func incomeButtonTapped(_ sender: Any) {
-        value = true
+        isOutcome = false
         sendActions(for: .valueChanged)
 
     }
     @IBAction private func outcomeButtonTapped(_ sender: Any) {
-        value = false
+        isOutcome = true
         sendActions(for: .valueChanged)
     }
     override init(frame: CGRect) {
@@ -74,4 +74,17 @@ final class GlassSegmentControl: UIControl {
         ])
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if isOutcome {
+            leadingButtonConstraint.constant = 2
+            trailingButtonConstraint.constant = bounds.width / 2
+
+        }
+        else {
+            leadingButtonConstraint.constant = bounds.width / 2
+            trailingButtonConstraint.constant = 2
+        }
+    }
 }

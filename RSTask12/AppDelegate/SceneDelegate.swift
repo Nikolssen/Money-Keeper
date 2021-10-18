@@ -10,18 +10,21 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var coordinator: Coordinator!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
         window.rootViewController = SettingsController(nibName: "SettingsController", bundle: nil)
         self.window = window
-        window.makeKeyAndVisible()
+        let coordinator = Coordinator(window: window)
+        self.coordinator = coordinator
+        coordinator.start()
+        
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        coordinator.coreDataService.saveContext()
     }
 
 

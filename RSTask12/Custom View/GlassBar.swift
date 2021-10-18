@@ -17,6 +17,19 @@ final class GlassBar: UIView {
     @IBOutlet private var leadingLabelConstraint: NSLayoutConstraint!
     @IBOutlet private var buttonToLabelConstraint: NSLayoutConstraint!
     
+    @IBOutlet private var labelToButtonConstraint: NSLayoutConstraint!
+    @IBOutlet private var trailingLabelConstraint: NSLayoutConstraint!
+    @IBInspectable var leadingButtonStyle: BarButton.BarButtonStyle  {
+        get { leadingButton.style }
+        set { leadingButton.style = newValue }
+        
+    }
+    @IBInspectable var trailingButtonStyle: BarButton.BarButtonStyle {
+        get { trailingButton.style }
+        set { trailingButton.style = newValue }
+        
+    }
+    
     @IBInspectable var leadingImage: UIImage? {
         willSet {
             leadingButton.setImage(newValue, for: .normal)
@@ -32,6 +45,8 @@ final class GlassBar: UIView {
             trailingButton.setImage(newValue, for: .normal)
             trailingButton.setImage(newValue?.withTintColor(.deepSaffron), for: .highlighted)
             trailingButton.isHidden = (newValue == nil)
+            trailingLabelConstraint.isActive = (newValue == nil)
+            labelToButtonConstraint.isActive = (newValue != nil)
         }
     }
     
@@ -46,11 +61,14 @@ final class GlassBar: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        leadingLabelConstraint.constant = 30
+        trailingLabelConstraint.constant = 30
         buttonToLabelConstraint.isActive = (leadingImage != nil)
         leadingLabelConstraint.isActive = (leadingImage == nil)
         trailingButton.isHidden = (trailingImage == nil)
-        leadingLabelConstraint.constant = 30
+        labelToButtonConstraint.isActive = (trailingImage != nil)
+        trailingLabelConstraint.isActive = (trailingImage == nil)
+
         titleLabel.text = title
     }
     override init(frame: CGRect) {

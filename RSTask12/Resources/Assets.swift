@@ -123,6 +123,22 @@ extension UIImage {
 
 extension UINib {
     static let walletList: String = "WalletListController"
-    static let walletSettings: String = "WalletSettingsController"
-       
+    static let walletSettings: String = "SettingsController"
+    static let wallet: String = "WalletController"
+    static let transaction: String = "TransactionController"
+    static let transactionSettings: String = "TransactionSettingsController"
+}
+
+extension UIFont {
+    static var montserratSemibold19: UIFont {
+        UIFont(name: "Montserrat-Semibold", size: 19)!
+    }
+    
+    static var montserratSemibold24: UIFont {
+        UIFont(name: "Montserrat-Semibold", size: 24)!
+    }
+    
+    static var montserratMedium13: UIFont {
+        UIFont(name: "Montserrat-Medium", size: 13)!
+    }
 }

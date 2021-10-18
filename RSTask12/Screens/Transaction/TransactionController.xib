@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionController" customModule="RSTask12" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundImageView" destination="zbD-5y-exN" id="i7S-W0-8Wr"/>
+                <outlet property="changeLabel" destination="BPh-QL-AKR" id="qv0-cL-jiJ"/>
+                <outlet property="deleteButton" destination="yBd-Cc-2Xy" id="V5Q-2Y-bAh"/>
+                <outlet property="editButton" destination="XZd-T4-wfg" id="xFK-Pr-Led"/>
+                <outlet property="glassBar" destination="qZi-FM-7SX" id="SEV-Rj-LGt"/>
+                <outlet property="noteTextView" destination="XXR-bI-lRv" id="pwA-BY-0gY"/>
+                <outlet property="titleLabel" destination="ImU-Nb-8dF" id="c6l-Rb-lsE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zbD-5y-exN">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZi-FM-7SX" customClass="GlassBar" customModule="RSTask12" customModuleProvider="target">
+                    <rect key="frame" x="20" y="64" width="374" height="75"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="eYi-PH-ULd"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="circle.back"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOW-TN-JqI" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
+                    <rect key="frame" x="20" y="208" width="374" height="537.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImU-Nb-8dF">
+                            <rect key="frame" x="30" y="30" width="102" height="44"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="36"/>
+                            <color key="textColor" name="Rick Black FOGRA 29"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZd-T4-wfg" customClass="BarButton" customModule="RSTask12" customModuleProvider="target">
+                            <rect key="frame" x="307" y="30" width="40" height="40"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="circle.pen"/>
+                            <connections>
+                                <action selector="editButtonTapped:" destination="-1" eventType="touchUpInside" id="VLl-wy-IiP"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPh-QL-AKR">
+                            <rect key="frame" x="30" y="129" width="132" height="58"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="47"/>
+                            <color key="textColor" name="Rick Black FOGRA 29"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUn-zB-kez" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
+                            <rect key="frame" x="30" y="232" width="314" height="237"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXR-bI-lRv">
+                                    <rect key="frame" x="8" y="44" width="298" height="184"/>
+                                    <color key="textColor" name="Rick Black FOGRA 29"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egE-3T-cyt">
+                                    <rect key="frame" x="22" y="8" width="60" height="29.5"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                                    <color key="textColor" name="Rick Black FOGRA 29"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="XXR-bI-lRv" secondAttribute="bottom" constant="9" id="DB7-oR-une"/>
+                                <constraint firstItem="XXR-bI-lRv" firstAttribute="centerX" secondItem="RUn-zB-kez" secondAttribute="centerX" id="JjY-Tf-pbk"/>
+                                <constraint firstItem="XXR-bI-lRv" firstAttribute="top" secondItem="egE-3T-cyt" secondAttribute="bottom" constant="6.5" id="WjW-mY-ilf"/>
+                                <constraint firstItem="XXR-bI-lRv" firstAttribute="leading" secondItem="RUn-zB-kez" secondAttribute="leading" constant="8" id="a5K-gB-MQ4"/>
+                                <constraint firstItem="egE-3T-cyt" firstAttribute="top" secondItem="RUn-zB-kez" secondAttribute="top" constant="8" id="quP-KU-O0A"/>
+                                <constraint firstItem="egE-3T-cyt" firstAttribute="leading" secondItem="RUn-zB-kez" secondAttribute="leading" constant="22" id="vCS-C6-WTr"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBd-Cc-2Xy" customClass="GlassButton" customModule="RSTask12" customModuleProvider="target">
+                            <rect key="frame" x="127" y="485" width="120" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="X4n-4w-GOQ"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Delete"/>
+                            <connections>
+                                <action selector="deleteButtonTapped:" destination="-1" eventType="touchUpInside" id="0wi-Jy-3rD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="BPh-QL-AKR" firstAttribute="leading" secondItem="oOW-TN-JqI" secondAttribute="leading" constant="30" id="EHU-eg-Or1"/>
+                        <constraint firstItem="RUn-zB-kez" firstAttribute="top" secondItem="BPh-QL-AKR" secondAttribute="bottom" constant="45" id="ESN-Tm-T8H"/>
+                        <constraint firstItem="yBd-Cc-2Xy" firstAttribute="centerX" secondItem="oOW-TN-JqI" secondAttribute="centerX" id="G2H-QP-T5l"/>
+                        <constraint firstItem="XZd-T4-wfg" firstAttribute="top" secondItem="oOW-TN-JqI" secondAttribute="top" constant="30" id="PDn-dc-s4c"/>
+                        <constraint firstItem="ImU-Nb-8dF" firstAttribute="top" secondItem="oOW-TN-JqI" secondAttribute="top" constant="30" id="PLq-YC-Ja1"/>
+                        <constraint firstItem="BPh-QL-AKR" firstAttribute="top" secondItem="ImU-Nb-8dF" secondAttribute="bottom" constant="55" id="Wqy-hu-qDk"/>
+                        <constraint firstItem="ImU-Nb-8dF" firstAttribute="leading" secondItem="oOW-TN-JqI" secondAttribute="leading" constant="30" id="a1z-G9-2sM"/>
+                        <constraint firstItem="yBd-Cc-2Xy" firstAttribute="top" secondItem="RUn-zB-kez" secondAttribute="bottom" constant="16" id="dNR-Fb-hap"/>
+                        <constraint firstAttribute="bottom" secondItem="yBd-Cc-2Xy" secondAttribute="bottom" constant="18.5" id="oaD-Ds-rlH"/>
+                        <constraint firstItem="RUn-zB-kez" firstAttribute="leading" secondItem="oOW-TN-JqI" secondAttribute="leading" constant="30" id="pL3-FB-Y6T"/>
+                        <constraint firstItem="RUn-zB-kez" firstAttribute="centerX" secondItem="oOW-TN-JqI" secondAttribute="centerX" id="w6G-Nf-Fjy"/>
+                        <constraint firstAttribute="trailing" secondItem="XZd-T4-wfg" secondAttribute="trailing" constant="27" id="zlO-Cw-1KP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zbD-5y-exN" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="34" id="4OX-9X-Yom"/>
+                <constraint firstItem="oOW-TN-JqI" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.6" id="6CG-qQ-WaQ"/>
+                <constraint firstItem="oOW-TN-JqI" firstAttribute="top" secondItem="qZi-FM-7SX" secondAttribute="bottom" constant="69" id="GlB-DZ-SAH"/>
+                <constraint firstItem="qZi-FM-7SX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="KvQ-Sz-3rn"/>
+                <constraint firstItem="zbD-5y-exN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MIj-WQ-0g0"/>
+                <constraint firstItem="oOW-TN-JqI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NZA-NP-Baa"/>
+                <constraint firstItem="qZi-FM-7SX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YTN-fQ-bqC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="zbD-5y-exN" secondAttribute="top" constant="44" id="i9h-ts-7vg"/>
+                <constraint firstItem="qZi-FM-7SX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="iWE-zy-65H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zbD-5y-exN" secondAttribute="trailing" id="kHA-HR-HfU"/>
+                <constraint firstItem="oOW-TN-JqI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="qih-AR-Arj"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle.back" width="40" height="40"/>
+        <image name="circle.pen" width="40" height="40"/>
+        <namedColor name="Rick Black FOGRA 29">
+            <color red="0.027450980392156862" green="0.062745098039215685" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

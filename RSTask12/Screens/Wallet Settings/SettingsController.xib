@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,7 +21,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsController" customModule="RSTask12" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundImageView" destination="1hA-fO-GFj" id="6vG-yf-RdQ"/>
+                <outlet property="codeLabel" destination="H0m-94-ooL" id="OGL-0x-A9J"/>
+                <outlet property="colorThemeImageView" destination="vMl-VB-fkn" id="Fq3-N2-JLI"/>
                 <outlet property="colorThemePanel" destination="858-TZ-1IZ" id="pZ0-wg-i6R"/>
+                <outlet property="currencyLabel" destination="BXz-P9-Vnx" id="jye-QD-OtP"/>
                 <outlet property="currencyPanel" destination="gWs-oh-I58" id="asQ-dl-iRC"/>
                 <outlet property="glassBar" destination="RCe-8q-v3v" id="VdL-Nu-6ve"/>
                 <outlet property="scrollView" destination="UlY-qV-Az6" id="wem-E1-97e"/>
@@ -35,7 +38,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aurora" translatesAutoresizingMaskIntoConstraints="NO" id="1hA-fO-GFj">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1hA-fO-GFj">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCe-8q-v3v" customClass="GlassBar" customModule="RSTask12" customModuleProvider="target">
@@ -47,20 +50,19 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="circle.back"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="Edit wallet"/>
-                        <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="circle.trash"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UlY-qV-Az6">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlY-qV-Az6">
                     <rect key="frame" x="0.0" y="163" width="414" height="733"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blS-Bg-hgd" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
-                            <rect key="frame" x="20" y="269.5" width="374" height="173"/>
+                            <rect key="frame" x="20" y="256" width="374" height="172"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWs-oh-I58" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
-                                    <rect key="frame" x="25" y="69.5" width="324" height="83.5"/>
+                                    <rect key="frame" x="25" y="68" width="324" height="84"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXz-P9-Vnx">
-                                            <rect key="frame" x="10" y="27" width="53" height="29.5"/>
+                                            <rect key="frame" x="10" y="27" width="48.5" height="30"/>
                                             <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                                             <color key="textColor" name="Rick Black FOGRA 29"/>
                                             <nil key="highlightedColor"/>
@@ -73,18 +75,28 @@
                                                 <constraint firstAttribute="width" constant="5" id="W0W-Ui-8Mg"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0m-94-ooL">
+                                            <rect key="frame" x="250.5" y="28" width="48.5" height="28"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                                            <color key="textColor" name="Rick Black FOGRA 29"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="XpI-tv-KPb" secondAttribute="trailing" constant="15" id="5oi-eD-bDj"/>
+                                        <constraint firstItem="H0m-94-ooL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BXz-P9-Vnx" secondAttribute="trailing" constant="10" id="9o0-oS-hhv"/>
                                         <constraint firstItem="BXz-P9-Vnx" firstAttribute="top" secondItem="gWs-oh-I58" secondAttribute="top" constant="27" id="STo-Rs-rhj"/>
+                                        <constraint firstItem="H0m-94-ooL" firstAttribute="top" secondItem="gWs-oh-I58" secondAttribute="top" constant="28" id="XpK-iw-hjO"/>
+                                        <constraint firstItem="H0m-94-ooL" firstAttribute="centerY" secondItem="gWs-oh-I58" secondAttribute="centerY" id="dY0-6X-HhX"/>
+                                        <constraint firstItem="BXz-P9-Vnx" firstAttribute="centerY" secondItem="gWs-oh-I58" secondAttribute="centerY" id="ohs-cw-oJm"/>
+                                        <constraint firstItem="XpI-tv-KPb" firstAttribute="leading" secondItem="H0m-94-ooL" secondAttribute="trailing" constant="5" id="ps6-SM-80m"/>
                                         <constraint firstItem="BXz-P9-Vnx" firstAttribute="leading" secondItem="gWs-oh-I58" secondAttribute="leading" constant="10" id="seW-fV-tSz"/>
                                         <constraint firstItem="XpI-tv-KPb" firstAttribute="centerY" secondItem="gWs-oh-I58" secondAttribute="centerY" id="sx0-Cr-i1y"/>
-                                        <constraint firstAttribute="bottom" secondItem="BXz-P9-Vnx" secondAttribute="bottom" constant="27" id="tvK-o8-cZB"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUL-ov-lsC">
-                                    <rect key="frame" x="25" y="20" width="112.5" height="29.5"/>
+                                    <rect key="frame" x="25" y="20" width="97.5" height="28"/>
                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                                     <color key="textColor" name="Rick Black FOGRA 29"/>
                                     <nil key="highlightedColor"/>
@@ -101,51 +113,38 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muu-uj-yLf" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
-                            <rect key="frame" x="20" y="491.5" width="374" height="183.5"/>
+                            <rect key="frame" x="20" y="448" width="374" height="183.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8p-xb-zgm" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
-                                    <rect key="frame" x="25" y="70.5" width="324" height="93"/>
-                                    <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHR-7i-4vN" customClass="TextField" customModule="RSTask12" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="5" width="308" height="83"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="83" id="PYi-lG-iiq"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="93" id="LKv-lk-AnT"/>
-                                        <constraint firstItem="uHR-7i-4vN" firstAttribute="centerX" secondItem="s8p-xb-zgm" secondAttribute="centerX" id="NPS-up-rQ2"/>
-                                        <constraint firstItem="uHR-7i-4vN" firstAttribute="leading" secondItem="s8p-xb-zgm" secondAttribute="leading" constant="8" id="XpU-ez-UzF"/>
-                                        <constraint firstItem="uHR-7i-4vN" firstAttribute="top" secondItem="s8p-xb-zgm" secondAttribute="top" constant="5" id="mTZ-IW-JV6"/>
-                                        <constraint firstItem="uHR-7i-4vN" firstAttribute="centerY" secondItem="s8p-xb-zgm" secondAttribute="centerY" id="y69-it-ksG"/>
-                                    </constraints>
-                                </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAm-V1-67s">
-                                    <rect key="frame" x="25" y="21" width="53.5" height="29.5"/>
+                                    <rect key="frame" x="25" y="21" width="45" height="28"/>
                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                                     <color key="textColor" name="Rick Black FOGRA 29"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHR-7i-4vN" customClass="TextField" customModule="RSTask12" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="65" width="324" height="83"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="83" id="PYi-lG-iiq"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="s8p-xb-zgm" secondAttribute="bottom" constant="20" id="2Mp-MI-aMk"/>
-                                <constraint firstItem="s8p-xb-zgm" firstAttribute="leading" secondItem="muu-uj-yLf" secondAttribute="leading" constant="25" id="SB5-9k-8gj"/>
-                                <constraint firstItem="s8p-xb-zgm" firstAttribute="top" secondItem="UAm-V1-67s" secondAttribute="bottom" constant="20" id="WM3-Zw-16B"/>
                                 <constraint firstItem="UAm-V1-67s" firstAttribute="top" secondItem="muu-uj-yLf" secondAttribute="top" constant="21" id="WUE-FU-Oy3"/>
-                                <constraint firstAttribute="trailing" secondItem="s8p-xb-zgm" secondAttribute="trailing" constant="25" id="bXo-89-UOK"/>
+                                <constraint firstItem="uHR-7i-4vN" firstAttribute="centerX" secondItem="muu-uj-yLf" secondAttribute="centerX" id="mFv-0c-3ku"/>
+                                <constraint firstAttribute="bottom" secondItem="uHR-7i-4vN" secondAttribute="bottom" constant="35.5" id="mLH-Xf-iLD"/>
                                 <constraint firstItem="UAm-V1-67s" firstAttribute="leading" secondItem="muu-uj-yLf" secondAttribute="leading" constant="25" id="upI-C1-yau"/>
+                                <constraint firstItem="uHR-7i-4vN" firstAttribute="leading" secondItem="muu-uj-yLf" secondAttribute="leading" constant="25" id="vJC-iM-v4E"/>
+                                <constraint firstItem="uHR-7i-4vN" firstAttribute="top" secondItem="muu-uj-yLf" secondAttribute="top" constant="65" id="zU8-N1-2Ek"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kg3-qU-7LE" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
-                            <rect key="frame" x="20" y="0.0" width="374" height="237.5"/>
+                            <rect key="frame" x="20" y="0.0" width="374" height="236"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="858-TZ-1IZ" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
-                                    <rect key="frame" x="25" y="79.5" width="324" height="128"/>
+                                    <rect key="frame" x="25" y="78" width="324" height="128"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aurora" translatesAutoresizingMaskIntoConstraints="NO" id="vMl-VB-fkn">
                                             <rect key="frame" x="21" y="20" width="282" height="88"/>
@@ -171,7 +170,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6p-x6-l05">
-                                    <rect key="frame" x="25" y="30" width="154" height="29.5"/>
+                                    <rect key="frame" x="25" y="30" width="132.5" height="28"/>
                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                                     <color key="textColor" name="Rick Black FOGRA 29"/>
                                     <nil key="highlightedColor"/>
@@ -189,10 +188,10 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="muu-uj-yLf" firstAttribute="top" secondItem="blS-Bg-hgd" secondAttribute="bottom" constant="49" id="2LU-Dz-5v8"/>
+                        <constraint firstItem="muu-uj-yLf" firstAttribute="top" secondItem="blS-Bg-hgd" secondAttribute="bottom" constant="20" id="2LU-Dz-5v8"/>
                         <constraint firstItem="GEc-mC-uOn" firstAttribute="trailing" secondItem="kg3-qU-7LE" secondAttribute="trailing" constant="20" id="4kQ-du-NPI"/>
                         <constraint firstItem="kg3-qU-7LE" firstAttribute="top" secondItem="UlY-qV-Az6" secondAttribute="top" id="Ici-N7-U6j"/>
-                        <constraint firstItem="blS-Bg-hgd" firstAttribute="top" secondItem="kg3-qU-7LE" secondAttribute="bottom" constant="32" id="YV4-Xl-Oo4"/>
+                        <constraint firstItem="blS-Bg-hgd" firstAttribute="top" secondItem="kg3-qU-7LE" secondAttribute="bottom" constant="20" id="YV4-Xl-Oo4"/>
                         <constraint firstItem="muu-uj-yLf" firstAttribute="leading" secondItem="GEc-mC-uOn" secondAttribute="leading" constant="20" id="aeZ-dO-yCJ"/>
                         <constraint firstItem="GEc-mC-uOn" firstAttribute="trailing" secondItem="blS-Bg-hgd" secondAttribute="trailing" constant="20" id="bsK-29-vtG"/>
                         <constraint firstItem="GEc-mC-uOn" firstAttribute="trailing" secondItem="muu-uj-yLf" secondAttribute="trailing" constant="20" id="gmQ-YQ-Cqu"/>
@@ -212,6 +211,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1hA-fO-GFj" secondAttribute="trailing" id="DcH-HS-jsE"/>
                 <constraint firstItem="RCe-8q-v3v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Eef-KL-hEE"/>
                 <constraint firstItem="UlY-qV-Az6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="34" id="JYi-Ko-SkZ"/>
+                <constraint firstItem="6RB-wD-u15" firstAttribute="width" secondItem="1hA-fO-GFj" secondAttribute="width" id="QlW-Cf-bMI"/>
                 <constraint firstItem="RCe-8q-v3v" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Y3c-mg-mVD"/>
                 <constraint firstItem="UlY-qV-Az6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YeW-Ki-eIP"/>
                 <constraint firstItem="1hA-fO-GFj" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="34" id="Zxf-JM-iMv"/>
@@ -227,7 +227,6 @@
         <image name="aurora" width="460" height="460"/>
         <image name="chevron.compact.right" catalog="system" width="64" height="128"/>
         <image name="circle.back" width="40" height="40"/>
-        <image name="circle.trash" width="40" height="40"/>
         <namedColor name="Rick Black FOGRA 29">
             <color red="0.027450980392156862" green="0.062745098039215685" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

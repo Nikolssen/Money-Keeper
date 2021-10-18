@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WalletListController: UIViewController {
+final class WalletListController: UIViewController {
     
     @IBOutlet var glassBar: GlassBar!
     @IBOutlet var collectionView: UICollectionView!
@@ -21,11 +21,18 @@ class WalletListController: UIViewController {
         collectionView.register(WalletCell.nib, forCellWithReuseIdentifier: WalletCell.reuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = viewModel
+
+        glassBar.trailingHandler = viewModel.newWallet
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-        layout?.itemSize = CGSize(width: view.frame.width - 40, height: WalletCell.height)
+        layout?.itemSize = CGSize(width: view.bounds.width - 40, height: WalletCell.height)
         layout?.minimumLineSpacing = 20
         layout?.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        
+        viewModel.update()
+        backgroundImageView.setAnimatedly(image: viewModel.backgroundImage)
     }
     
 }
@@ -39,9 +46,6 @@ extension WalletListController: WalletListViewModelDelegate {
         infoLabel.isHidden = isHidden
     }
     
-    func setBackgroundImage(image: UIImage) {
-        UIView.animate(withDuration: 0.8, delay: 0, options: .transitionCrossDissolve, animations: {self.backgroundImageView.image = image}, completion: nil)
-    }
 }
 
 extension WalletListController: UICollectionViewDelegate {

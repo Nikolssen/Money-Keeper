@@ -13,9 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GlassSegmentControl" customModule="RSTask12" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="QhZ-IE-qGA"/>
-                <outlet property="incomeButton" destination="09p-ue-Wga" id="B98-VS-lRE"/>
+                <outlet property="incomeButton" destination="5j2-PX-Jm8" id="LAO-xD-PKV"/>
                 <outlet property="leadingButtonConstraint" destination="hy4-W6-Bgg" id="agy-oo-ThY"/>
-                <outlet property="outcomeButton" destination="5j2-PX-Jm8" id="9Mu-al-DEW"/>
+                <outlet property="outcomeButton" destination="09p-ue-Wga" id="z3y-ij-JTl"/>
                 <outlet property="trailingButtonConstraint" destination="hRV-XE-r3i" id="5CF-yF-D8L"/>
             </connections>
         </placeholder>
@@ -31,21 +31,21 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09p-ue-Wga">
                     <rect key="frame" x="2" y="2" width="100" height="28"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Income">
-                        <color key="titleColor" name="Celadon"/>
+                    <state key="normal" title="Outcome">
+                        <color key="titleColor" name="Amaranth Red"/>
                     </state>
                     <connections>
-                        <action selector="incomeButtonTapped:" destination="-1" eventType="touchUpInside" id="H6m-6c-oJk"/>
+                        <action selector="outcomeButtonTapped:" destination="-1" eventType="touchUpInside" id="tXh-5U-ANa"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j2-PX-Jm8">
                     <rect key="frame" x="98" y="2" width="100" height="28"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Outcome">
-                        <color key="titleColor" name="Amaranth Red"/>
+                    <state key="normal" title="Income">
+                        <color key="titleColor" name="Celadon"/>
                     </state>
                     <connections>
-                        <action selector="outcomeButtonTapped:" destination="-1" eventType="touchUpInside" id="cFf-gC-2A2"/>
+                        <action selector="incomeButtonTapped:" destination="-1" eventType="touchUpInside" id="hds-u9-6KS"/>
                     </connections>
                 </button>
             </subviews>
@@ -65,7 +65,6 @@
                 <constraint firstAttribute="trailing" secondItem="iVo-VM-Slj" secondAttribute="trailing" priority="750" constant="2" id="hRV-XE-r3i"/>
                 <constraint firstItem="iVo-VM-Slj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="750" constant="2" id="hy4-W6-Bgg"/>
                 <constraint firstItem="5j2-PX-Jm8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="l7O-wB-tzV"/>
-                <constraint firstItem="iVo-VM-Slj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" priority="900" id="mFL-kI-N5W"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="316.80000000000001" y="-284.25787106446779"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GlassView: UIView {
+final class GlassView: UIView {
     
     private lazy var gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
@@ -36,6 +36,14 @@ class GlassView: UIView {
         layer.shadowOpacity = 1
 
         return layer
+    }()
+    
+    private var borderShapeLayerMask: CAShapeLayer = {
+        let shape = CAShapeLayer()
+        shape.lineWidth = 2
+        shape.strokeColor = UIColor.black.cgColor
+        shape.fillColor = UIColor.clear.cgColor
+        return shape
     }()
     
     func commonInit() {
@@ -70,15 +78,8 @@ class GlassView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = layer.bounds
-        borderLayer.mask = nil
-        
-        let shape = CAShapeLayer()
-        shape.lineWidth = 2
-        shape.path = UIBezierPath(roundedRect: bounds, cornerRadius: 20).cgPath
-        shape.strokeColor = UIColor.black.cgColor
-        shape.fillColor = UIColor.clear.cgColor
-        
-        borderLayer.mask = shape
+        borderShapeLayerMask.path = UIBezierPath(roundedRect: bounds, cornerRadius: 20).cgPath
+        borderLayer.mask = borderShapeLayerMask
         borderLayer.frame = layer.bounds
         shadowLayer.frame = layer.bounds
         shadowLayer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 20).cgPath

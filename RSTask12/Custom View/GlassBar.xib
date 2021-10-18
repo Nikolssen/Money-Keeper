@@ -19,10 +19,12 @@
             <connections>
                 <outlet property="buttonToLabelConstraint" destination="cg9-lG-CZC" id="TeN-S6-DsD"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="VMa-7J-Wwj"/>
+                <outlet property="labelToButtonConstraint" destination="EfV-YQ-xnv" id="jVS-tL-8i8"/>
                 <outlet property="leadingButton" destination="nXi-YI-o0X" id="xGt-kQ-4U0"/>
                 <outlet property="leadingLabelConstraint" destination="bBH-m4-fXn" id="kjM-qk-wD3"/>
                 <outlet property="titleLabel" destination="VMF-r2-Wb6" id="e4J-bf-6sx"/>
                 <outlet property="trailingButton" destination="62R-EW-Zos" id="Lz7-qX-JkY"/>
+                <outlet property="trailingLabelConstraint" destination="pZY-Ct-cEs" id="D0v-UY-tOZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,7 +35,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7W-YM-zOV" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMF-r2-Wb6">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="VMF-r2-Wb6">
                             <rect key="frame" x="90" y="23" width="234" height="29.5"/>
                             <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                             <color key="textColor" name="Rick Black FOGRA 29"/>
@@ -74,6 +76,7 @@
                         <constraint firstItem="62R-EW-Zos" firstAttribute="centerY" secondItem="e7W-YM-zOV" secondAttribute="centerY" id="fKN-xK-4vk"/>
                         <constraint firstItem="nXi-YI-o0X" firstAttribute="leading" secondItem="e7W-YM-zOV" secondAttribute="leading" constant="30" id="ihw-vU-lQw"/>
                         <constraint firstItem="nXi-YI-o0X" firstAttribute="centerY" secondItem="e7W-YM-zOV" secondAttribute="centerY" id="nW1-9T-dYv"/>
+                        <constraint firstAttribute="trailing" secondItem="VMF-r2-Wb6" secondAttribute="trailing" constant="30" id="pZY-Ct-cEs"/>
                     </constraints>
                 </view>
             </subviews>

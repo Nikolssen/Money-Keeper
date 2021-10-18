@@ -29,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="romance" translatesAutoresizingMaskIntoConstraints="NO" id="b6X-vx-eg6">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b6X-vx-eg6">
                     <rect key="frame" x="0.0" y="0.0" width="416" height="898"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </imageView>
@@ -45,7 +45,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9Jy-dG-ZTA">
-                    <rect key="frame" x="0.0" y="179" width="414" height="683"/>
+                    <rect key="frame" x="0.0" y="179" width="414" height="717"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nf3-UL-yrG">
                         <size key="itemSize" width="128" height="128"/>
@@ -55,7 +55,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No wallets created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz2-I2-wbi">
-                    <rect key="frame" x="108" y="435" width="200" height="28"/>
+                    <rect key="frame" x="93" y="434.5" width="230" height="29.5"/>
                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -66,10 +66,10 @@
             <constraints>
                 <constraint firstItem="V38-tg-UeO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="6Sy-c8-aFG"/>
                 <constraint firstItem="Nz2-I2-wbi" firstAttribute="centerX" secondItem="b6X-vx-eg6" secondAttribute="centerX" id="A4v-7A-gYR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="b6X-vx-eg6" secondAttribute="top" constant="44" id="Dgb-eD-lb0"/>
+                <constraint firstAttribute="top" secondItem="b6X-vx-eg6" secondAttribute="top" id="Dgb-eD-lb0"/>
                 <constraint firstItem="V38-tg-UeO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FuM-0m-ZS3"/>
                 <constraint firstItem="b6X-vx-eg6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="36" id="UeJ-tc-bg8"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9Jy-dG-ZTA" secondAttribute="bottom" id="aZB-5M-9qT"/>
+                <constraint firstAttribute="bottom" secondItem="9Jy-dG-ZTA" secondAttribute="bottom" id="aZB-5M-9qT"/>
                 <constraint firstItem="9Jy-dG-ZTA" firstAttribute="top" secondItem="V38-tg-UeO" secondAttribute="bottom" constant="40" id="fda-tr-aGA"/>
                 <constraint firstItem="Nz2-I2-wbi" firstAttribute="centerY" secondItem="b6X-vx-eg6" secondAttribute="centerY" id="h2C-Lg-NDl"/>
                 <constraint firstItem="b6X-vx-eg6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="2" id="hyE-yV-TVX"/>
@@ -83,7 +83,6 @@
     </objects>
     <resources>
         <image name="circle.plus" width="40" height="40"/>
-        <image name="romance" width="460" height="460"/>
         <namedColor name="Dark Purple">
             <color red="0.078431372549019607" green="0.058823529411764705" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

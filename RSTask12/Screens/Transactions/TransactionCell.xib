@@ -34,12 +34,6 @@
                                     <constraint firstAttribute="width" constant="50" id="qCe-de-k8U"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmS-g2-Q8o">
-                                <rect key="frame" x="104" y="114" width="39.5" height="17.5"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
-                                <color key="textColor" name="Rick Black FOGRA 29"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.compact.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fnG-Bw-3xn">
                                 <rect key="frame" x="403" y="96" width="5" height="13"/>
                                 <color key="tintColor" name="Rick Black FOGRA 29"/>
@@ -48,31 +42,41 @@
                                     <constraint firstAttribute="height" constant="16" id="6th-K5-6MV"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yd-r6-UYz">
-                                <rect key="frame" x="188" y="88" width="67.5" height="29.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="4Yd-r6-UYz">
+                                <rect key="frame" x="156" y="88" width="67.5" height="29.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                                 <color key="textColor" name="Amaranth Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbQ-oE-KT3">
-                                <rect key="frame" x="104" y="84" width="76" height="22"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
-                                <color key="textColor" name="Rick Black FOGRA 29"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-eJ-J52">
+                                <rect key="frame" x="90" y="77" width="51" height="51.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="kbQ-oE-KT3">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="22"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                        <color key="textColor" name="Rick Black FOGRA 29"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmS-g2-Q8o">
+                                        <rect key="frame" x="0.0" y="34" width="51" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                        <color key="textColor" name="Rick Black FOGRA 29"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NmS-g2-Q8o" firstAttribute="top" secondItem="kbQ-oE-KT3" secondAttribute="bottom" constant="8" symbolic="YES" id="2dK-Et-SRz"/>
-                            <constraint firstItem="NmS-g2-Q8o" firstAttribute="leading" secondItem="GL5-GR-6TW" secondAttribute="trailing" constant="34" id="4Bw-dW-OXR"/>
                             <constraint firstItem="GL5-GR-6TW" firstAttribute="leading" secondItem="QeW-sg-dL1" secondAttribute="leading" constant="20" id="Cd1-md-lZs"/>
-                            <constraint firstItem="4Yd-r6-UYz" firstAttribute="centerX" secondItem="QeW-sg-dL1" secondAttribute="centerX" id="JvD-r9-b4J"/>
-                            <constraint firstItem="NmS-g2-Q8o" firstAttribute="baseline" secondItem="GL5-GR-6TW" secondAttribute="baseline" id="MBh-cr-SX6"/>
+                            <constraint firstItem="IvL-eJ-J52" firstAttribute="leading" secondItem="GL5-GR-6TW" secondAttribute="trailing" constant="20" id="Epu-hO-d0h"/>
                             <constraint firstItem="4Yd-r6-UYz" firstAttribute="centerY" secondItem="QeW-sg-dL1" secondAttribute="centerY" id="QwD-bY-XdT"/>
                             <constraint firstItem="GL5-GR-6TW" firstAttribute="centerY" secondItem="QeW-sg-dL1" secondAttribute="centerY" id="R7i-Rw-dcC"/>
+                            <constraint firstItem="IvL-eJ-J52" firstAttribute="height" secondItem="GL5-GR-6TW" secondAttribute="height" multiplier="1.03" id="Tux-bI-zGd"/>
                             <constraint firstAttribute="trailing" secondItem="fnG-Bw-3xn" secondAttribute="trailing" constant="35" id="bsp-d4-xXS"/>
-                            <constraint firstItem="kbQ-oE-KT3" firstAttribute="leading" secondItem="GL5-GR-6TW" secondAttribute="trailing" constant="34" id="dgh-iA-Rgt"/>
-                            <constraint firstItem="4Yd-r6-UYz" firstAttribute="leading" secondItem="kbQ-oE-KT3" secondAttribute="trailing" constant="8" symbolic="YES" id="dmg-9c-YM9"/>
+                            <constraint firstItem="IvL-eJ-J52" firstAttribute="centerY" secondItem="QeW-sg-dL1" secondAttribute="centerY" id="eXf-LY-pHW"/>
+                            <constraint firstItem="fnG-Bw-3xn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Yd-r6-UYz" secondAttribute="trailing" constant="20" id="gXm-f9-2dd"/>
+                            <constraint firstItem="4Yd-r6-UYz" firstAttribute="leading" secondItem="IvL-eJ-J52" secondAttribute="trailing" constant="15" id="ieQ-Dt-j3Z"/>
                             <constraint firstItem="fnG-Bw-3xn" firstAttribute="centerY" secondItem="QeW-sg-dL1" secondAttribute="centerY" id="rwl-wg-D6f"/>
                         </constraints>
                     </view>
@@ -93,7 +97,7 @@
                 <outlet property="imageView" destination="GL5-GR-6TW" id="vqo-DM-RA6"/>
                 <outlet property="nameLabel" destination="kbQ-oE-KT3" id="GLD-Ay-ZEt"/>
             </connections>
-            <point key="canvasLocation" x="247.10144927536234" y="177.79017857142856"/>
+            <point key="canvasLocation" x="245.59999999999999" y="177.66116941529236"/>
         </collectionViewCell>
     </objects>
     <resources>

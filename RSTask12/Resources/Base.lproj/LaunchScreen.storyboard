@@ -39,7 +39,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="4095" height="4096"/>
+        <image name="logo" width="292" height="292"/>
         <namedColor name="Dark Purple">
             <color red="0.078431372549019607" green="0.058823529411764705" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
