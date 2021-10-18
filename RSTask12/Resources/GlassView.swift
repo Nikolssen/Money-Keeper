@@ -53,6 +53,7 @@ final class GlassView: UIView {
         
         
         layer.cornerRadius = 20
+        layer.cornerCurve = .continuous
         layer.borderColor = UIColor.babyPowder.withAlphaComponent(0.55).cgColor
         
 
@@ -77,11 +78,12 @@ final class GlassView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        borderLayer.frame = layer.bounds
+        shadowLayer.frame = layer.bounds
         gradientLayer.frame = layer.bounds
         borderShapeLayerMask.path = UIBezierPath(roundedRect: bounds, cornerRadius: 20).cgPath
         borderLayer.mask = borderShapeLayerMask
-        borderLayer.frame = layer.bounds
-        shadowLayer.frame = layer.bounds
+        
         shadowLayer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 20).cgPath
     }
     
