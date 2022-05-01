@@ -40,7 +40,7 @@ protocol WalletViewModelDelegate: AnyObject {
 final class WalletViewModel: NSObject, WalletViewModelling {
     let walletInfo: WalletInfo
     let coordinator: WalletCoordinator
-    let service: CoreDataServiceType
+    let service: Service
     weak var delegate: WalletViewModelDelegate?
     
     var transactions: [TransactionInfo] = [] { didSet {
@@ -76,7 +76,7 @@ final class WalletViewModel: NSObject, WalletViewModelling {
     
     
     var balance: String {
-        Currency.currencyFormat(for: (service.totalBalance(for: walletInfo)), code: walletInfo.currencyCode)
+        Currency.currencyFormat(for: (service.coreDataService.totalBalance(for: walletInfo)), code: walletInfo.currencyCode)
     }
     
     var walletTitle: String {
@@ -100,14 +100,14 @@ final class WalletViewModel: NSObject, WalletViewModelling {
     }
     
     func update() {
-        transactions = service.fetchTransactions(wallet: walletInfo)
+        transactions = service.coreDataService.fetchTransactions(wallet: walletInfo)
     }
     
     func goBack() {
         coordinator.goBack()
     }
     
-    init(walletInfo: WalletInfo, coordinator: WalletCoordinator, service: CoreDataServiceType) {
+    init(walletInfo: WalletInfo, coordinator: WalletCoordinator, service: Service) {
         coordinator.colorTheme = walletInfo.theme
         self.walletInfo = walletInfo
         self.coordinator = coordinator

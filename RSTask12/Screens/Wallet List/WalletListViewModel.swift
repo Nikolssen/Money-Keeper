@@ -29,7 +29,7 @@ protocol WalletListViewModelDelegate: AnyObject {
 final class WalletListViewModel: NSObject, WalletListViewModelling {
 
     private let coordinator: WalletListCoordinator
-    private let service: CoreDataServiceType
+    private let service: Service
     weak var delegate: WalletListViewModelDelegate?
     
     var wallets: [WalletInfo] = [] {
@@ -41,12 +41,12 @@ final class WalletListViewModel: NSObject, WalletListViewModelling {
     
     private func cellViewModel(at index: Int) -> WalletCellViewModel {
         let wallet = wallets[index]
-        let balance = service.totalBalance(for: wallet)
-        let lastChangeDate = service.lastChangeDate(for: wallets[index])?.toExtendedFormat ?? "New"
+        let balance = service.coreDataService.totalBalance(for: wallet)
+        let lastChangeDate = service.coreDataService.lastChangeDate(for: wallets[index])?.toExtendedFormat ?? "New"
         return WalletCellViewModel(title: wallets[index].title, balance: Currency.currencyFormat(for: balance, code: wallet.currencyCode), date: lastChangeDate)
     }
     
-    init(service: CoreDataServiceType, coordinator: WalletListCoordinator) {
+    init(service: Service, coordinator: WalletListCoordinator) {
         self.coordinator = coordinator
         self.service = service
     }
@@ -75,6 +75,6 @@ final class WalletListViewModel: NSObject, WalletListViewModelling {
     }
     
     func update() {
-        wallets = service.fetchWallets()
+        wallets = service.coreDataService.fetchWallets()
     }
 }

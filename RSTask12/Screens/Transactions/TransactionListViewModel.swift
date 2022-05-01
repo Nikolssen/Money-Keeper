@@ -18,7 +18,7 @@ protocol TransactionListDelegate: AnyObject {
 class TransactionListViewModel: NSObject, CollectionControllerViewModelling {
     weak var delegate: TransactionListDelegate?
     let coordinator: TransactionListCoordinator
-    let service: CoreDataServiceType
+    let service: Service
     var transactions: [TransactionInfo] = [] { didSet {
         delegate?.updateCollectionView()
     }
@@ -55,11 +55,11 @@ class TransactionListViewModel: NSObject, CollectionControllerViewModelling {
         return cell
     }
     
-    init(coordinator: TransactionListCoordinator, service: CoreDataServiceType, walletInfo: WalletInfo) {
+    init(coordinator: TransactionListCoordinator, service: Service, walletInfo: WalletInfo) {
         self.coordinator = coordinator
         self.service = service
         self.walletInfo = walletInfo
-        transactions = service.fetchTransactions(wallet: walletInfo)
+        transactions = service.coreDataService.fetchTransactions(wallet: walletInfo)
     }
     
 }

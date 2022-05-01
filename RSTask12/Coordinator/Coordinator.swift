@@ -9,7 +9,7 @@ import UIKit
 final class Coordinator {
     let rootViewController: UINavigationController = UINavigationController()
     let window: UIWindow
-    let coreDataService: CoreDataServiceType = CoreDataService(containerName: "RSTask12")
+    let service: Service = Service()
     var colorTheme: ColorTheme = ColorTheme.allCases.randomElement()!
     
     func start() {
@@ -31,7 +31,7 @@ final class Coordinator {
 extension Coordinator {
     var walletListController: WalletListController {
         let controller = WalletListController(nibName: UINib.walletList, bundle: nil)
-        let viewModel = WalletListViewModel(service: coreDataService, coordinator: self)
+        let viewModel = WalletListViewModel(service: service, coordinator: self)
         viewModel.delegate = controller
         controller.viewModel = viewModel
         return controller
@@ -47,7 +47,7 @@ extension Coordinator: WalletListCoordinator, WalletSettingsCoordinator,
     
     func goToNewWallet() {
         let walletSettingsController = SettingsController(nibName: UINib.walletSettings, bundle: nil)
-        let viewModel = NewWalletViewModel(coordinator: self, service: coreDataService)
+        let viewModel = NewWalletViewModel(coordinator: self, service: service)
         viewModel.delegate = walletSettingsController
         walletSettingsController.viewModel = viewModel
         rootViewController.pushViewController(walletSettingsController, animated: true)
@@ -55,7 +55,7 @@ extension Coordinator: WalletListCoordinator, WalletSettingsCoordinator,
     
     func goToWallet(walletInfo: WalletInfo) {
         let walletController = WalletController(nibName: UINib.wallet, bundle: nil)
-        let viewModel = WalletViewModel(walletInfo: walletInfo, coordinator: self, service: coreDataService)
+        let viewModel = WalletViewModel(walletInfo: walletInfo, coordinator: self, service: service)
         walletController.viewModel = viewModel
         viewModel.delegate = walletController
         rootViewController.pushViewController(walletController, animated: true)
@@ -90,14 +90,14 @@ extension Coordinator: WalletListCoordinator, WalletSettingsCoordinator,
     
     func goEdit(wallet: WalletInfo) {
         let controller = SettingsController(nibName: UINib.walletSettings, bundle: nil)
-        let viewModel = WalletEditingViewModel(coordinator: self, service: coreDataService, wallet: wallet)
+        let viewModel = WalletEditingViewModel(coordinator: self, service: service, wallet: wallet)
         viewModel.delegate = controller
         controller.viewModel = viewModel
         rootViewController.pushViewController(controller, animated: true)
     }
     func goToEdit(transactionInfo: TransactionInfo, wallet: WalletInfo) {
         let controller = TransactionSettingsController(nibName: UINib.transactionSettings, bundle: nil)
-        let viewModel = TransactionEditingViewModel(coordinator: self, service: coreDataService, walletInfo: wallet, transactionInfo: transactionInfo)
+        let viewModel = TransactionEditingViewModel(coordinator: self, service: service, walletInfo: wallet, transactionInfo: transactionInfo)
         controller.viewModel = viewModel
         viewModel.delegate = controller
         rootViewController.pushViewController(controller, animated: true)
@@ -105,7 +105,7 @@ extension Coordinator: WalletListCoordinator, WalletSettingsCoordinator,
     
     func goToNewTransaction(for wallet: WalletInfo) {
         let controller = TransactionSettingsController(nibName: UINib.transactionSettings, bundle: nil)
-        let viewModel = NewTransactionViewModel(coordinator: self, service: coreDataService, walletInfo: wallet)
+        let viewModel = NewTransactionViewModel(coordinator: self, service: service, walletInfo: wallet)
         controller.viewModel = viewModel
         viewModel.delegate = controller
         rootViewController.pushViewController(controller, animated: true)
@@ -113,14 +113,14 @@ extension Coordinator: WalletListCoordinator, WalletSettingsCoordinator,
     
     func goToAllTransaction(for wallet: WalletInfo) {
         let controller = CollectionController< TransactionListViewModel, TransactionCell>()
-        let viewModel = TransactionListViewModel(coordinator: self, service: coreDataService, walletInfo: wallet)
+        let viewModel = TransactionListViewModel(coordinator: self, service: service, walletInfo: wallet)
         controller.viewModel = viewModel
         rootViewController.pushViewController(controller, animated: true)
     }
     
     func showTransaction(for transaction: TransactionInfo, wallet: WalletInfo) {
         let controller = TransactionController(nibName: UINib.transaction, bundle: nil)
-        let viewModel = TransactionViewModel(coordinator: self, service: coreDataService, wallet: wallet, transaction: transaction)
+        let viewModel = TransactionViewModel(coordinator: self, service: service, wallet: wallet, transaction: transaction)
         controller.viewModel = viewModel
         rootViewController.pushViewController(controller, animated: true)
     }

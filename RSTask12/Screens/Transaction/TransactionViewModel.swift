@@ -24,7 +24,7 @@ protocol TransactionViewModelling {
 final class TransactionViewModel: TransactionViewModelling {
     
     let coordinator: TransactionCoordinator
-    let service: CoreDataServiceType
+    let service: Service
     
     var transactionInfo: TransactionInfo
     let walletInfo: WalletInfo
@@ -68,17 +68,17 @@ final class TransactionViewModel: TransactionViewModelling {
     }
     
     func delete() {
-        service.deleteTransaction(transaction: transactionInfo, from: walletInfo)
+        service.coreDataService.deleteTransaction(transaction: transactionInfo, from: walletInfo)
     }
     
     func update() {
-        if let id = transactionInfo.id, let transaction = service.transaction(with: id) {
+        if let id = transactionInfo.id, let transaction = service.coreDataService.transaction(with: id) {
             transactionInfo = transaction
         }
     }
     
     
-    init(coordinator: TransactionCoordinator, service: CoreDataServiceType, wallet: WalletInfo, transaction: TransactionInfo) {
+    init(coordinator: TransactionCoordinator, service: Service, wallet: WalletInfo, transaction: TransactionInfo) {
         self.coordinator = coordinator
         self.service = service
         self.transactionInfo = transaction

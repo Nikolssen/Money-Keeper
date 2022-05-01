@@ -8,7 +8,8 @@
 import UIKit
 
 class CategoryCell: UICollectionViewCell {
-
+    
+    @IBOutlet var glassView: GlassView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
@@ -19,16 +20,25 @@ class CategoryCell: UICollectionViewCell {
     override var isSelected: Bool {
         willSet {
             if newValue {
-                leadingConstraint.constant = 30
-                topConstraint.constant = 7.5
-                titleLabel.font = .montserratSemibold19
+                UIView.animate(withDuration: 0.2) {
+                    
+                    self.leadingConstraint.constant = 30
+                    self.topConstraint.constant = 7.5
+                    self.titleLabel.font = .montserratSemibold19
+                    self.glassView.radius = 16
+                    self.layoutIfNeeded()
+                }
             }
             else {
-                leadingConstraint.constant = 0
-                topConstraint.constant = 0
-                titleLabel.font = .montserratSemibold24
+                UIView.animate(withDuration: 0.2) {
+                    self.leadingConstraint.constant = 0
+                    self.topConstraint.constant = 0
+                    self.titleLabel.font = .montserratSemibold24
+                    self.glassView.radius = 20
+                    self.layoutIfNeeded()
+                }
             }
-          layoutIfNeeded()
+            
         }
     }
     
@@ -38,7 +48,7 @@ class CategoryCell: UICollectionViewCell {
         imageView.layer.borderColor = UIColor.rickBlack.cgColor
         imageView.layer.borderWidth = 2
     }
-
+    
     override func prepareForReuse() {
         leadingConstraint.constant = 0
         topConstraint.constant = 0

@@ -13,7 +13,7 @@ import CoreData
 class WalletEditingViewModel: SettingsViewModelling {
     var walletInfo: WalletInfo
     var coordinator: WalletSettingsCoordinator
-    var service: CoreDataServiceType
+    var service: Service
     weak var delegate: SettingsViewModelDelegate?
     
     var glassBarTrailingImage: UIImage? {
@@ -26,7 +26,7 @@ class WalletEditingViewModel: SettingsViewModelling {
     
     private func delete() {
         if let id = walletInfo.id {
-            service.deleteWallet(with: id)
+            service.coreDataService.deleteWallet(with: id)
             coordinator.popToWalletList()
         }
 
@@ -50,7 +50,7 @@ class WalletEditingViewModel: SettingsViewModelling {
         delegate?.showAlert(title: "Confirm new wallet.", message: "Would you like to apply changes?", leftButtonTitle: "Yes", rightButtonTitle: "No", leftButtonAction:{[weak self]
             in
             guard let self = self else {return}
-            self.service.changeWallet(walletInfo: self.walletInfo)
+            self.service.coreDataService.changeWallet(walletInfo: self.walletInfo)
             self.coordinator.goBack()}, rightButtonAction:  {[weak self] in self?.coordinator.goBack()})
     }
     
@@ -89,10 +89,10 @@ class WalletEditingViewModel: SettingsViewModelling {
     }
     
     private func isTitleValid(title: String) -> Bool {
-        return !service.doesWalletTitleExist(walletInfo: walletInfo)
+        return !service.coreDataService.doesWalletTitleExist(walletInfo: walletInfo)
     }
     
-    init(coordinator: WalletSettingsCoordinator, service: CoreDataServiceType, wallet: WalletInfo) {
+    init(coordinator: WalletSettingsCoordinator, service: Service, wallet: WalletInfo) {
         coordinator.colorTheme = wallet.theme
         self.coordinator = coordinator
         self.service = service

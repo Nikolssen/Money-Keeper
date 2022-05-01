@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alertift
 
 final class SettingsController: UIViewController {
 
@@ -25,7 +26,7 @@ final class SettingsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+
         colorThemePanel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showColorThemes)))
         currencyPanel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showCurrencies)))
         glassBar.trailingButtonStyle = .destructive
@@ -44,9 +45,6 @@ final class SettingsController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
-        
         currencyLabel.text = viewModel.currencyDescription
         codeLabel.text = viewModel.currencyCode
         colorThemeImageView.image = viewModel.currentThemeImage
@@ -54,16 +52,7 @@ final class SettingsController: UIViewController {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: UIWindow.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIWindow.keyboardWillShowNotification, object: nil)
-    }
     
-    
-    @objc private func hideKeyboard() {
-        view.endEditing(true)
-    }
     @objc private func showColorThemes() {
         viewModel.showColors()
     }
@@ -72,18 +61,6 @@ final class SettingsController: UIViewController {
         viewModel.showCurrencies()
     }
     
-    @objc private func keyboardWillShow(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            scrollViewContentBottomConstraint.constant = keyboardSize.height + 50
-            view.layoutIfNeeded()
-            scrollView.contentOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.height + scrollView.contentInset.bottom)
-        }
-    }
-
-    @objc private func keyboardWillHide(notification: Notification) {
-        scrollViewContentBottomConstraint.constant = 60
-        view.layoutIfNeeded()
-    }
 }
 
 extension SettingsController: UITextFieldDelegate {
@@ -103,15 +80,21 @@ extension SettingsController: SettingsViewModelDelegate{
     }
     
     func showAlert(title: String, message: String, leftButtonTitle: String, rightButtonTitle: String, leftButtonAction: @escaping ()->Void, rightButtonAction: @escaping () -> Void) {
-        let glassAlert = GlassAlertController(nibName: "GlassAlertController", bundle: nil)
-        glassAlert.loadViewIfNeeded()
-        glassAlert.titleLabel.text = title
-        glassAlert.messageLabel.text = message
-        glassAlert.leftButton.setTitle(leftButtonTitle, for: .normal)
-        glassAlert.rightButton.setTitle(rightButtonTitle, for: .normal)
-        glassAlert.leftButtonAction = leftButtonAction
-        glassAlert.rightButtonAction = rightButtonAction
-        glassAlert.show(on: self)
+        Alertift.alert(title: title, message: message)
+            .titleTextColor(.rickBlack)
+            .messageTextColor(.deepSaffron)
+            .buttonTextColor(.deepSaffron)
+            .action(.default(leftButtonTitle))
+            .action(.cancel(rightButtonTitle))
+            .finally { action, _, _ in
+                if action.style == .default {
+                    leftButtonAction()
+                }
+                if action.style == .cancel {
+                    rightButtonAction()
+                }
+            }
+            .show()
     }
 }
 

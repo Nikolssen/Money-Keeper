@@ -55,7 +55,7 @@ final class GlassButton: UIButton {
             setTitleColor(.amaranthRed, for: .normal)
         }
         titleEdgeInsets = UIEdgeInsets(top: 6.5, left: 24, bottom: 6.5, right: 24)
-        
+        glassView.radius = 8
     }
 
 }

@@ -13,7 +13,7 @@ final class NewTransactionViewModel: TransactionSettingsViewModelling {
     private let coordinator: TransactionSettingsCoordinator
     private var transactionInfo: TransactionInfo
     private let walletInfo: WalletInfo
-    private let service: CoreDataServiceType
+    private let service: Service
     weak var delegate: TransactionSettingsViewModelDelagate?
     
     func goBack() {
@@ -28,7 +28,7 @@ final class NewTransactionViewModel: TransactionSettingsViewModelling {
         }
         
         delegate?.showAlert(title: "Commiting new transaction.", message: "Would you like to commit a transaction?", leftButtonTitle: "Yes", rightButtonTitle: "No", leftButtonAction: { [weak self] in guard let self = self else { return }
-            self.service.addTransaction(transactionInfo: self.transactionInfo, in: self.walletInfo)
+            self.service.coreDataService.addTransaction(transactionInfo: self.transactionInfo, in: self.walletInfo)
             self.coordinator.goBack()
         }, rightButtonAction: {[weak self] in self?.coordinator.goBack()})
         
@@ -92,7 +92,7 @@ final class NewTransactionViewModel: TransactionSettingsViewModelling {
         coordinator.colorTheme.image
     }
     
-    init(coordinator: TransactionSettingsCoordinator, service: CoreDataServiceType, walletInfo: WalletInfo) {
+    init(coordinator: TransactionSettingsCoordinator, service: Service, walletInfo: WalletInfo) {
         self.coordinator = coordinator
         self.service = service
         self.walletInfo = walletInfo

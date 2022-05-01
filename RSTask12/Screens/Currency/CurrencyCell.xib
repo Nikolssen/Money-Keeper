@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,15 +27,15 @@
                     <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0z-5a-v6x" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="520" height="151"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="l8w-H8-BAG">
-                                <rect key="frame" x="34" y="61" width="67.5" height="29.5"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8w-H8-BAG">
+                                <rect key="frame" x="34" y="64" width="53.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="19"/>
                                 <color key="textColor" name="Rick Black FOGRA 29"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="DDD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnn-XW-zFl">
-                                <rect key="frame" x="421.5" y="61" width="59.5" height="29.5"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                                <rect key="frame" x="433.5" y="64" width="47.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="19"/>
                                 <color key="textColor" name="Rick Black FOGRA 29"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -63,6 +63,7 @@
             <connections>
                 <outlet property="currencyCodeLabel" destination="Gnn-XW-zFl" id="0xc-KW-OAt"/>
                 <outlet property="currencyNameLabel" destination="l8w-H8-BAG" id="Zpl-7s-5Wj"/>
+                <outlet property="glassView" destination="O0z-5a-v6x" id="4fk-F0-ACQ"/>
                 <outlet property="labelLeadingConstraint" destination="gbe-sy-xj0" id="esb-7G-rrL"/>
                 <outlet property="labelTrailingConstraint" destination="aIT-hq-Zpx" id="bwd-71-bSH"/>
                 <outlet property="leadingConstraint" destination="AR5-uE-eqJ" id="UQb-c1-Dvp"/>

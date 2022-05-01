@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,16 +16,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
-        window.rootViewController = SettingsController(nibName: "SettingsController", bundle: nil)
+        window.rootViewController = AuthViewController(nibName: "AuthViewController", bundle: nil)
         self.window = window
-        let coordinator = Coordinator(window: window)
-        self.coordinator = coordinator
-        coordinator.start()
+//        let coordinator = Coordinator(window: window)
+//        self.coordinator = coordinator
+        IQKeyboardManager.shared.enable = true
+//        coordinator.start()
+        window.makeKeyAndVisible()
         
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        coordinator.coreDataService.saveContext()
+        coordinator?.service.coreDataService.saveContext()
     }
 
 

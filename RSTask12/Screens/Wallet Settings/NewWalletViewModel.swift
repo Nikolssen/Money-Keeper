@@ -16,7 +16,7 @@ class NewWalletViewModel: SettingsViewModelling {
     }
     
     var coordinator: WalletSettingsCoordinator
-    var service: CoreDataServiceType
+    var service: Service
     weak var delegate: SettingsViewModelDelegate?
     
     var walletInfo: WalletInfo
@@ -43,7 +43,7 @@ class NewWalletViewModel: SettingsViewModelling {
         delegate?.showAlert(title: "Confirming new wallet", message: "Would you like to add wallet to your wallet list?", leftButtonTitle: "Yes", rightButtonTitle: "No", leftButtonAction: {[weak self]
             in
             guard let self = self else {return}
-            self.service.addNewWallet(walletInfo: self.walletInfo)
+            self.service.coreDataService.addNewWallet(walletInfo: self.walletInfo)
             self.coordinator.goBack()}, rightButtonAction: {[weak self] in self?.coordinator.goBack()})
             
     }
@@ -68,7 +68,7 @@ class NewWalletViewModel: SettingsViewModelling {
     }
     
     private func isTitleValid(title: String) -> Bool {
-        return !service.doesWalletTitleExist(walletInfo: walletInfo)
+        return !service.coreDataService.doesWalletTitleExist(walletInfo: walletInfo)
     }
     
     func showColors() {
@@ -85,7 +85,7 @@ class NewWalletViewModel: SettingsViewModelling {
         }
     }
     
-    init(coordinator: WalletSettingsCoordinator, service: CoreDataServiceType) {
+    init(coordinator: WalletSettingsCoordinator, service: Service) {
         self.coordinator = coordinator
         self.service = service
         walletInfo = .init(theme: coordinator.colorTheme, currencyCode: Currency.localCurrencyCode, title: "", id: nil)

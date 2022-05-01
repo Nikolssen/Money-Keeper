@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alertift
 
 class TransactionSettingsController: UIViewController {
     var viewModel: TransactionSettingsViewModelling!
@@ -75,15 +76,21 @@ class TransactionSettingsController: UIViewController {
 
 extension TransactionSettingsController: TransactionSettingsViewModelDelagate {
     func showAlert(title: String, message: String, leftButtonTitle: String, rightButtonTitle: String, leftButtonAction: @escaping ()->Void, rightButtonAction: @escaping () -> Void) {
-        let glassAlert = GlassAlertController(nibName: "GlassAlertController", bundle: nil)
-        glassAlert.loadViewIfNeeded()
-        glassAlert.titleLabel.text = title
-        glassAlert.messageLabel.text = message
-        glassAlert.leftButton.setTitle(leftButtonTitle, for: .normal)
-        glassAlert.rightButton.setTitle(rightButtonTitle, for: .normal)
-        glassAlert.leftButtonAction = leftButtonAction
-        glassAlert.rightButtonAction = rightButtonAction
-        glassAlert.show(on: self)
+        Alertift.alert(title: title, message: message)
+            .titleTextColor(.rickBlack)
+            .messageTextColor(.deepSaffron)
+            .buttonTextColor(.deepSaffron)
+            .action(.default(leftButtonTitle))
+            .action(.cancel(rightButtonTitle))
+            .finally { action, _, _ in
+                if action.style == .default {
+                    leftButtonAction()
+                }
+                if action.style == .cancel {
+                    rightButtonAction()
+                }
+            }
+            .show()
     }
 }
 

@@ -8,7 +8,8 @@
 import UIKit
 
 class CurrencyCell: UICollectionViewCell {
-
+    
+    @IBOutlet var glassView: GlassView!
     @IBOutlet var leadingConstraint: NSLayoutConstraint!
     @IBOutlet var topConstraint: NSLayoutConstraint!
     @IBOutlet var labelLeadingConstraint: NSLayoutConstraint!
@@ -18,22 +19,22 @@ class CurrencyCell: UICollectionViewCell {
     @IBOutlet var currencyNameLabel: UILabel!
     override var isSelected: Bool {
         willSet {
-            if newValue {
-                leadingConstraint.constant = 30
-                topConstraint.constant = 7.5
-                labelLeadingConstraint.constant = 24
-                labelTrailingConstraint.constant = 24
-                currencyCodeLabel.font = .montserratSemibold19
-                currencyNameLabel.font = .montserratSemibold19
-            } else {
-                leadingConstraint.constant = 0
-                topConstraint.constant = 0
-                labelLeadingConstraint.constant = 30
-                labelTrailingConstraint.constant = 30
-                currencyCodeLabel.font = .montserratSemibold24
-                currencyNameLabel.font = .montserratSemibold24
+            UIView.animate(withDuration: 0.2) {
+                if newValue {
+                    self.glassView.radius = 16
+                    self.leadingConstraint.constant = 30
+                    self.topConstraint.constant = 7.5
+                    self.labelLeadingConstraint.constant = 24
+                    self.labelTrailingConstraint.constant = 24
+                } else {
+                    self.glassView.radius = 20
+                    self.leadingConstraint.constant = 0
+                    self.topConstraint.constant = 0
+                    self.labelLeadingConstraint.constant = 30
+                    self.labelTrailingConstraint.constant = 30
+                }
+                self.layoutIfNeeded()
             }
-            layoutIfNeeded()
         }
     }
     
@@ -45,15 +46,15 @@ class CurrencyCell: UICollectionViewCell {
         currencyNameLabel.text = viewModel.currencyName
         currencyCodeLabel.text = viewModel.currencyCode
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         leadingConstraint.constant = 0
         topConstraint.constant = 0
         labelLeadingConstraint.constant = 30
         labelTrailingConstraint.constant = 30
-        currencyCodeLabel.font = .montserratSemibold24
-        currencyNameLabel.font = .montserratSemibold24
+        self.currencyCodeLabel.font = .montserratSemibold19
+        self.currencyNameLabel.font = .montserratSemibold19
     }
 }
 

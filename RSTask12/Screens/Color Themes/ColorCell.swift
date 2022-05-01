@@ -23,8 +23,8 @@ class ColorCell: UICollectionViewCell {
                 leadingConstraint.constant = 0
                 topConstraint.constant = 0
             }
-            UIView.animate(withDuration: 0.4, animations: {
-                self.setNeedsLayout()
+            UIView.animate(withDuration: 0.2, animations: {
+                self.layoutIfNeeded()
             })
             
         }
