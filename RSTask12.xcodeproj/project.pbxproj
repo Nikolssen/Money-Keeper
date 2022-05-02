@@ -40,6 +40,7 @@
 		3F37C86326FC89D4009F4EF4 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F37C86226FC89D4009F4EF4 /* Montserrat-Medium.ttf */; };
 		3F37C86526FC89E0009F4EF4 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F37C86426FC89E0009F4EF4 /* Montserrat-SemiBold.ttf */; };
 		3F6DB282270D800500D88D70 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6DB281270D800500D88D70 /* TransactionListViewModel.swift */; };
+		3F7223F9281FEFF300AD9648 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F7223F8281FEFF300AD9648 /* GoogleService-Info.plist */; };
 		3F7420DE270B4B0000EE3BE4 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7420DC270B4B0000EE3BE4 /* Transaction+CoreDataClass.swift */; };
 		3F7420DF270B4B0000EE3BE4 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7420DD270B4B0000EE3BE4 /* Transaction+CoreDataProperties.swift */; };
 		3F7D4EFF26FCA1C40086616F /* WalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D4EFD26FCA1C40086616F /* WalletCell.swift */; };
@@ -50,9 +51,9 @@
 		3F81C6CD270AE02E000A6704 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81C6CC270AE02E000A6704 /* WalletViewModel.swift */; };
 		3F8F473F281EE0F100A077A0 /* Alertift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8F473E281EE0F100A077A0 /* Alertift */; };
 		3F8F4742281EE57500A077A0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8F4741281EE57500A077A0 /* IQKeyboardManagerSwift */; };
-		3F8F4746281EEE9400A077A0 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4744281EEE9400A077A0 /* AuthViewController.swift */; };
-		3F8F4747281EEE9400A077A0 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F8F4745281EEE9400A077A0 /* AuthViewController.xib */; };
-		3F8F474A281EF81F00A077A0 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4749281EF81F00A077A0 /* AuthViewModel.swift */; };
+		3F8F4746281EEE9400A077A0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4744281EEE9400A077A0 /* RegistrationViewController.swift */; };
+		3F8F4747281EEE9400A077A0 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F8F4745281EEE9400A077A0 /* RegistrationViewController.xib */; };
+		3F8F474A281EF81F00A077A0 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4749281EF81F00A077A0 /* RegistrationViewModel.swift */; };
 		3F8F474D281EF87500A077A0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8F474C281EF87500A077A0 /* RxCocoa */; };
 		3F8F474F281EF87500A077A0 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8F474E281EF87500A077A0 /* RxRelay */; };
 		3F8F4751281EF87500A077A0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F8F4750281EF87500A077A0 /* RxSwift */; };
@@ -62,6 +63,13 @@
 		3F8F475A281EF99400A077A0 /* String+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4759281EF99400A077A0 /* String+Credentials.swift */; };
 		3F8F475C281EFA6600A077A0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F475B281EFA6600A077A0 /* Service.swift */; };
 		3F8F475E281EFAC800A077A0 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F475D281EFAC800A077A0 /* FirebaseService.swift */; };
+		3F8F4767281F03F700A077A0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8F4766281F03F700A077A0 /* WidgetKit.framework */; };
+		3F8F4769281F03F700A077A0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8F4768281F03F700A077A0 /* SwiftUI.framework */; };
+		3F8F476C281F03F700A077A0 /* Task12Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F476B281F03F700A077A0 /* Task12Widget.swift */; };
+		3F8F476F281F03F800A077A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F8F476E281F03F800A077A0 /* Assets.xcassets */; };
+		3F8F4771281F03F800A077A0 /* Task12Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F476D281F03F700A077A0 /* Task12Widget.intentdefinition */; };
+		3F8F4772281F03F800A077A0 /* Task12Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F476D281F03F700A077A0 /* Task12Widget.intentdefinition */; };
+		3F8F4775281F03F800A077A0 /* Task12WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3F8F4764281F03F700A077A0 /* Task12WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3F923186270C921200655EB8 /* NewTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F923185270C921200655EB8 /* NewTransactionViewModel.swift */; };
 		3F923188270C922A00655EB8 /* TransactionEditingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F923187270C922A00655EB8 /* TransactionEditingViewModel.swift */; };
 		3F92318C270C92E100655EB8 /* TransactionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92318A270C92E100655EB8 /* TransactionController.swift */; };
@@ -72,6 +80,11 @@
 		3FC3496127049752005C3190 /* Wallet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC3495D27049752005C3190 /* Wallet+CoreDataProperties.swift */; };
 		3FC7815227059DBF00D5BECD /* ColorThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7815127059DBF00D5BECD /* ColorThemeViewModel.swift */; };
 		3FCD69582705F0330009DD5A /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD69572705F0330009DD5A /* CurrencyViewModel.swift */; };
+		3FFA318A281FAC5D008F65EF /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFA3188281FAC5D008F65EF /* AuthorizationViewController.swift */; };
+		3FFA318B281FAC5D008F65EF /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FFA3189281FAC5D008F65EF /* AuthorizationViewController.xib */; };
+		3FFA318D281FAC6A008F65EF /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFA318C281FAC6A008F65EF /* AuthorizationViewModel.swift */; };
+		3FFA3190281FB557008F65EF /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 3FFA318F281FB557008F65EF /* Toast */; };
+		3FFA3192281FB6F0008F65EF /* UIViewController+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFA3191281FB6F0008F65EF /* UIViewController+Toast.swift */; };
 		840FB10026FB8E3E0088FAF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FB0FF26FB8E3E0088FAF1 /* AppDelegate.swift */; };
 		840FB10226FB8E3E0088FAF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FB10126FB8E3E0088FAF1 /* SceneDelegate.swift */; };
 		840FB10C26FB8E480088FAF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840FB10B26FB8E480088FAF1 /* Assets.xcassets */; };
@@ -87,6 +100,30 @@
 		84574F8B27045ED500476961 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84574F8A27045ED500476961 /* TextView.swift */; };
 		84FED08B26FFB07500A5ACA2 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FED08A26FFB07500A5ACA2 /* ColorTheme.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F8F4773281F03F800A077A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840FB0F426FB8E3E0088FAF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F8F4763281F03F700A077A0;
+			remoteInfo = Task12WidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F8F4779281F03F800A077A0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3F8F4775281F03F800A077A0 /* Task12WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3F2405AA26FDE4900011BD49 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
@@ -122,6 +159,7 @@
 		3F37C86226FC89D4009F4EF4 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		3F37C86426FC89E0009F4EF4 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		3F6DB281270D800500D88D70 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		3F7223F8281FEFF300AD9648 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F7420DC270B4B0000EE3BE4 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3F7420DD270B4B0000EE3BE4 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F7D4EFD26FCA1C40086616F /* WalletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCell.swift; sourceTree = "<group>"; };
@@ -130,12 +168,21 @@
 		3F7D4F0426FCC05F0086616F /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		3F7D4F0526FCC05F0086616F /* SettingsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsController.xib; sourceTree = "<group>"; };
 		3F81C6CC270AE02E000A6704 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
-		3F8F4744281EEE9400A077A0 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		3F8F4745281EEE9400A077A0 /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
-		3F8F4749281EF81F00A077A0 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		3F8F4744281EEE9400A077A0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		3F8F4745281EEE9400A077A0 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		3F8F4749281EF81F00A077A0 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		3F8F4759281EF99400A077A0 /* String+Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Credentials.swift"; sourceTree = "<group>"; };
 		3F8F475B281EFA6600A077A0 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		3F8F475D281EFAC800A077A0 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		3F8F475F281F038600A077A0 /* RSTask12.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RSTask12.entitlements; sourceTree = "<group>"; };
+		3F8F4764281F03F700A077A0 /* Task12WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Task12WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F8F4766281F03F700A077A0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3F8F4768281F03F700A077A0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3F8F476B281F03F700A077A0 /* Task12Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task12Widget.swift; sourceTree = "<group>"; };
+		3F8F476D281F03F700A077A0 /* Task12Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Task12Widget.intentdefinition; sourceTree = "<group>"; };
+		3F8F476E281F03F800A077A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F8F4770281F03F800A077A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F8F477A281F053200A077A0 /* Task12WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Task12WidgetExtension.entitlements; sourceTree = "<group>"; };
 		3F923185270C921200655EB8 /* NewTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewModel.swift; sourceTree = "<group>"; };
 		3F923187270C922A00655EB8 /* TransactionEditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditingViewModel.swift; sourceTree = "<group>"; };
 		3F92318A270C92E100655EB8 /* TransactionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionController.swift; sourceTree = "<group>"; };
@@ -146,6 +193,10 @@
 		3FC3495D27049752005C3190 /* Wallet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3FC7815127059DBF00D5BECD /* ColorThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeViewModel.swift; sourceTree = "<group>"; };
 		3FCD69572705F0330009DD5A /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
+		3FFA3188281FAC5D008F65EF /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		3FFA3189281FAC5D008F65EF /* AuthorizationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorizationViewController.xib; sourceTree = "<group>"; };
+		3FFA318C281FAC6A008F65EF /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
+		3FFA3191281FB6F0008F65EF /* UIViewController+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Toast.swift"; sourceTree = "<group>"; };
 		840FB0FC26FB8E3E0088FAF1 /* RSTask12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSTask12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840FB0FF26FB8E3E0088FAF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840FB10126FB8E3E0088FAF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +216,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3F8F4761281F03F700A077A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8F4769281F03F700A077A0 /* SwiftUI.framework in Frameworks */,
+				3F8F4767281F03F700A077A0 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		840FB0F926FB8E3E0088FAF1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -172,6 +232,7 @@
 				3F8F474D281EF87500A077A0 /* RxCocoa in Frameworks */,
 				3F8F4754281EF96700A077A0 /* FirebaseAuth in Frameworks */,
 				3F8F473F281EE0F100A077A0 /* Alertift in Frameworks */,
+				3FFA3190281FB557008F65EF /* Toast in Frameworks */,
 				3F8F4751281EF87500A077A0 /* RxSwift in Frameworks */,
 				3F8F474F281EF87500A077A0 /* RxRelay in Frameworks */,
 				3F8F4758281EF96700A077A0 /* FirebaseStorage in Frameworks */,
@@ -267,6 +328,7 @@
 				3F2AE9FB2702DDC900951141 /* Currency.swift */,
 				3F2DD8F82704721600763756 /* Date.swift */,
 				3F8F4759281EF99400A077A0 /* String+Credentials.swift */,
+				3FFA3191281FB6F0008F65EF /* UIViewController+Toast.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -316,9 +378,8 @@
 		3F8F4743281EEE7F00A077A0 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				3F8F4744281EEE9400A077A0 /* AuthViewController.swift */,
-				3F8F4745281EEE9400A077A0 /* AuthViewController.xib */,
-				3F8F4749281EF81F00A077A0 /* AuthViewModel.swift */,
+				3FFA3187281FABC4008F65EF /* Authorization */,
+				3FFA3186281FABB1008F65EF /* Registration */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -331,6 +392,26 @@
 			path = FirebaseService;
 			sourceTree = "<group>";
 		};
+		3F8F4765281F03F700A077A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F8F4766281F03F700A077A0 /* WidgetKit.framework */,
+				3F8F4768281F03F700A077A0 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F8F476A281F03F700A077A0 /* Task12Widget */ = {
+			isa = PBXGroup;
+			children = (
+				3F8F476B281F03F700A077A0 /* Task12Widget.swift */,
+				3F8F476D281F03F700A077A0 /* Task12Widget.intentdefinition */,
+				3F8F476E281F03F800A077A0 /* Assets.xcassets */,
+				3F8F4770281F03F800A077A0 /* Info.plist */,
+			);
+			path = Task12Widget;
+			sourceTree = "<group>";
+		};
 		3F923189270C92C800655EB8 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,11 +422,34 @@
 			path = Transaction;
 			sourceTree = "<group>";
 		};
+		3FFA3186281FABB1008F65EF /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				3F8F4744281EEE9400A077A0 /* RegistrationViewController.swift */,
+				3F8F4745281EEE9400A077A0 /* RegistrationViewController.xib */,
+				3F8F4749281EF81F00A077A0 /* RegistrationViewModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		3FFA3187281FABC4008F65EF /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				3FFA3188281FAC5D008F65EF /* AuthorizationViewController.swift */,
+				3FFA3189281FAC5D008F65EF /* AuthorizationViewController.xib */,
+				3FFA318C281FAC6A008F65EF /* AuthorizationViewModel.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		840FB0F326FB8E3E0088FAF1 = {
 			isa = PBXGroup;
 			children = (
+				3F8F477A281F053200A077A0 /* Task12WidgetExtension.entitlements */,
 				840FB0FE26FB8E3E0088FAF1 /* RSTask12 */,
 				3FC34959270495CA005C3190 /* RSTask12.xcdatamodeld */,
+				3F8F476A281F03F700A077A0 /* Task12Widget */,
+				3F8F4765281F03F700A077A0 /* Frameworks */,
 				840FB0FD26FB8E3E0088FAF1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -354,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				840FB0FC26FB8E3E0088FAF1 /* RSTask12.app */,
+				3F8F4764281F03F700A077A0 /* Task12WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +466,8 @@
 		840FB0FE26FB8E3E0088FAF1 /* RSTask12 */ = {
 			isa = PBXGroup;
 			children = (
+				3F7223F8281FEFF300AD9648 /* GoogleService-Info.plist */,
+				3F8F475F281F038600A077A0 /* RSTask12.entitlements */,
 				3F8F4748281EF71700A077A0 /* FirebaseService */,
 				3F2DD8F727046EE000763756 /* Helpers */,
 				3F246E3B2701F263000D1C61 /* CoreData */,
@@ -465,6 +572,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3F8F4763281F03F700A077A0 /* Task12WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F8F4776281F03F800A077A0 /* Build configuration list for PBXNativeTarget "Task12WidgetExtension" */;
+			buildPhases = (
+				3F8F4760281F03F700A077A0 /* Sources */,
+				3F8F4761281F03F700A077A0 /* Frameworks */,
+				3F8F4762281F03F700A077A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Task12WidgetExtension;
+			productName = Task12WidgetExtension;
+			productReference = 3F8F4764281F03F700A077A0 /* Task12WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		840FB0FB26FB8E3E0088FAF1 /* RSTask12 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 840FB12926FB8E490088FAF1 /* Build configuration list for PBXNativeTarget "RSTask12" */;
@@ -472,10 +596,12 @@
 				840FB0F826FB8E3E0088FAF1 /* Sources */,
 				840FB0F926FB8E3E0088FAF1 /* Frameworks */,
 				840FB0FA26FB8E3E0088FAF1 /* Resources */,
+				3F8F4779281F03F800A077A0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3F8F4774281F03F800A077A0 /* PBXTargetDependency */,
 			);
 			name = RSTask12;
 			packageProductDependencies = (
@@ -487,6 +613,7 @@
 				3F8F4753281EF96700A077A0 /* FirebaseAuth */,
 				3F8F4755281EF96700A077A0 /* FirebaseFirestore */,
 				3F8F4757281EF96700A077A0 /* FirebaseStorage */,
+				3FFA318F281FB557008F65EF /* Toast */,
 			);
 			productName = RSTask12;
 			productReference = 840FB0FC26FB8E3E0088FAF1 /* RSTask12.app */;
@@ -498,9 +625,12 @@
 		840FB0F426FB8E3E0088FAF1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					3F8F4763281F03F700A077A0 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
 					840FB0FB26FB8E3E0088FAF1 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -520,17 +650,27 @@
 				3F8F4740281EE57500A077A0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				3F8F474B281EF87500A077A0 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				3F8F4752281EF96700A077A0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3FFA318E281FB557008F65EF /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 840FB0FD26FB8E3E0088FAF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				840FB0FB26FB8E3E0088FAF1 /* RSTask12 */,
+				3F8F4763281F03F700A077A0 /* Task12WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3F8F4762281F03F700A077A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8F476F281F03F800A077A0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		840FB0FA26FB8E3E0088FAF1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,7 +679,7 @@
 				3F7D4F0226FCAAB30086616F /* Montserrat-Regular.ttf in Resources */,
 				3F37C86526FC89E0009F4EF4 /* Montserrat-SemiBold.ttf in Resources */,
 				3F2405B726FDE9E00011BD49 /* TransactionCell.xib in Resources */,
-				3F8F4747281EEE9400A077A0 /* AuthViewController.xib in Resources */,
+				3F8F4747281EEE9400A077A0 /* RegistrationViewController.xib in Resources */,
 				3F7D4F0026FCA1C40086616F /* WalletCell.xib in Resources */,
 				841A6A3C2708EA3A00E5DE6E /* CategoryCell.xib in Resources */,
 				3F2405AD26FDE4900011BD49 /* ColorCell.xib in Resources */,
@@ -549,8 +689,10 @@
 				3F37C86326FC89D4009F4EF4 /* Montserrat-Medium.ttf in Resources */,
 				3F2405B126FDE8850011BD49 /* CurrencyCell.xib in Resources */,
 				840FB10F26FB8E480088FAF1 /* LaunchScreen.storyboard in Resources */,
+				3FFA318B281FAC5D008F65EF /* AuthorizationViewController.xib in Resources */,
 				3F37C85C26FC7D42009F4EF4 /* WalletListController.xib in Resources */,
 				3F7D4F0726FCC05F0086616F /* SettingsController.xib in Resources */,
+				3F7223F9281FEFF300AD9648 /* GoogleService-Info.plist in Resources */,
 				840FB10C26FB8E480088FAF1 /* Assets.xcassets in Resources */,
 				3F246E2C2701ADE9000D1C61 /* GlassSegmentControl.xib in Resources */,
 			);
@@ -559,6 +701,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3F8F4760281F03F700A077A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8F4771281F03F800A077A0 /* Task12Widget.intentdefinition in Sources */,
+				3F8F476C281F03F700A077A0 /* Task12Widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		840FB0F826FB8E3E0088FAF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -567,25 +718,28 @@
 				3F8F475C281EFA6600A077A0 /* Service.swift in Sources */,
 				3FCD69582705F0330009DD5A /* CurrencyViewModel.swift in Sources */,
 				3F2405B026FDE8850011BD49 /* CurrencyCell.swift in Sources */,
+				3FFA318D281FAC6A008F65EF /* AuthorizationViewModel.swift in Sources */,
 				3FC3496127049752005C3190 /* Wallet+CoreDataProperties.swift in Sources */,
 				3F2405B926FE07B00011BD49 /* TransactionCellViewModel.swift in Sources */,
 				3F2405AC26FDE4900011BD49 /* ColorCell.swift in Sources */,
 				3F7D4F0626FCC05F0086616F /* SettingsController.swift in Sources */,
 				3F37C85B26FC7D42009F4EF4 /* WalletListController.swift in Sources */,
+				3FFA3192281FB6F0008F65EF /* UIViewController+Toast.swift in Sources */,
 				3F246E382701EED4000D1C61 /* Coordinator.swift in Sources */,
 				841E282F2700F2020022D36F /* WalletInfo.swift in Sources */,
 				841A6A342708EA0100E5DE6E /* TransactionSettingsController.swift in Sources */,
+				3F8F4772281F03F800A077A0 /* Task12Widget.intentdefinition in Sources */,
 				3F2AEA0727030A9100951141 /* WalletController.swift in Sources */,
 				3F246E422701FAFF000D1C61 /* CollectionViewLayout.swift in Sources */,
 				840FB10026FB8E3E0088FAF1 /* AppDelegate.swift in Sources */,
 				841A6A422708F1A200E5DE6E /* TransactionCategoryViewModel.swift in Sources */,
 				3F81C6CD270AE02E000A6704 /* WalletViewModel.swift in Sources */,
 				3FC3496027049752005C3190 /* Wallet+CoreDataClass.swift in Sources */,
-				3F8F4746281EEE9400A077A0 /* AuthViewController.swift in Sources */,
+				3F8F4746281EEE9400A077A0 /* RegistrationViewController.swift in Sources */,
 				3F8F475E281EFAC800A077A0 /* FirebaseService.swift in Sources */,
 				841A6A3B2708EA3A00E5DE6E /* CategoryCell.swift in Sources */,
 				3F7420DF270B4B0000EE3BE4 /* Transaction+CoreDataProperties.swift in Sources */,
-				3F8F474A281EF81F00A077A0 /* AuthViewModel.swift in Sources */,
+				3F8F474A281EF81F00A077A0 /* RegistrationViewModel.swift in Sources */,
 				84574F8B27045ED500476961 /* TextView.swift in Sources */,
 				3F2405BB26FE139C0011BD49 /* GlassButton.swift in Sources */,
 				84FED08B26FFB07500A5ACA2 /* ColorTheme.swift in Sources */,
@@ -595,6 +749,7 @@
 				3F7D4EFF26FCA1C40086616F /* WalletCell.swift in Sources */,
 				3F2AE9FC2702DDCA00951141 /* Currency.swift in Sources */,
 				3F8F475A281EF99400A077A0 /* String+Credentials.swift in Sources */,
+				3FFA318A281FAC5D008F65EF /* AuthorizationViewController.swift in Sources */,
 				3F2405BD26FE17AD0011BD49 /* BarButton.swift in Sources */,
 				3F92318C270C92E100655EB8 /* TransactionController.swift in Sources */,
 				3F2AEA012702F6A600951141 /* NewWalletViewModel.swift in Sources */,
@@ -621,6 +776,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3F8F4774281F03F800A077A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F8F4763281F03F700A077A0 /* Task12WidgetExtension */;
+			targetProxy = 3F8F4773281F03F800A077A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		840FB10D26FB8E480088FAF1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -633,6 +796,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3F8F4777281F03F800A077A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = Task12WidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JWC2B928Y5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Task12Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Task12Widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ivan-Budovich.RSTask12.Task12Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F8F4778281F03F800A077A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = Task12WidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JWC2B928Y5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Task12Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Task12Widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ivan-Budovich.RSTask12.Task12Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		840FB12726FB8E490088FAF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -752,10 +975,12 @@
 		840FB12A26FB8E490088FAF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RSTask12/RSTask12.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9G6V47L895;
+				DEVELOPMENT_TEAM = JWC2B928Y5;
 				INFOPLIST_FILE = RSTask12/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -772,10 +997,12 @@
 		840FB12B26FB8E490088FAF1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RSTask12/RSTask12.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9G6V47L895;
+				DEVELOPMENT_TEAM = JWC2B928Y5;
 				INFOPLIST_FILE = RSTask12/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -792,6 +1019,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3F8F4776281F03F800A077A0 /* Build configuration list for PBXNativeTarget "Task12WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F8F4777281F03F800A077A0 /* Debug */,
+				3F8F4778281F03F800A077A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		840FB0F726FB8E3E0088FAF1 /* Build configuration list for PBXProject "RSTask12" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -845,6 +1081,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		3FFA318E281FB557008F65EF /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -887,6 +1131,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3F8F4752281EF96700A077A0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		3FFA318F281FB557008F65EF /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FFA318E281FB557008F65EF /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 

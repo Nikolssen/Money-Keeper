@@ -7,6 +7,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,18 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
-        window.rootViewController = AuthViewController(nibName: "AuthViewController", bundle: nil)
         self.window = window
-//        let coordinator = Coordinator(window: window)
-//        self.coordinator = coordinator
+        let coordinator = Coordinator(window: window)
+        self.coordinator = coordinator
+        FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
-//        coordinator.start()
+        coordinator.start()
         window.makeKeyAndVisible()
         
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         coordinator?.service.coreDataService.saveContext()
+        UserDefaults.init(suiteName: "group.task12")?.set("PPP", forKey: "Main")
     }
 
 

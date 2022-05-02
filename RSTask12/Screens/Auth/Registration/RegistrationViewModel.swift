@@ -29,10 +29,13 @@ protocol RegistrationViewModelType {
     var repeatPasswordCheckMessage: PublishRelay<String> {get}
     var isRegistrationEnabled: BehaviorRelay<Bool> {get}
     var activityIndicator: BehaviorRelay<Bool> {get}
+    var goBack: PublishRelay<Void> {get}
 }
 
-protocol RegistrationViewModelCoordinator: ErrorHandler {
+protocol RegistrationViewModelCoordinator {
     func registered()
+    func handle(error: Error)
+    func backToAuthorization()
 }
 
 
@@ -55,6 +58,7 @@ class RegistrationViewModel: RegistrationViewModelType {
     let repeatPasswordCheckMessage: PublishRelay<String> = .init()
     let isRegistrationEnabled: BehaviorRelay<Bool> = .init(value: false)
     let activityIndicator: BehaviorRelay<Bool> = .init(value: false)
+    let goBack: PublishRelay<Void> = .init()
     let disposeBag = DisposeBag()
     
     init(coordinator: RegistrationViewModelCoordinator, service: Service){
@@ -80,14 +84,14 @@ class RegistrationViewModel: RegistrationViewModelType {
         
         passwordObservable
             .map({ (_, result) in
-                    switch result {
-                    case .empty, .valid:
-                        return ""
-                    case .short:
-                        return "Password must have at least 6 characters"
-                    case .invalid:
-                        return "Password must contain only latin letters and numbers"
-                    }})
+                switch result {
+                case .empty, .valid:
+                    return ""
+                case .short:
+                    return "Password must have at least 6 characters"
+                case .invalid:
+                    return "Password must contain only latin letters and numbers"
+                }})
             .bind(to: passwordCheckMessage)
             .disposed(by: disposeBag)
         
@@ -101,27 +105,27 @@ class RegistrationViewModel: RegistrationViewModelType {
         let repeatPasswordResultObservable = Observable
             .combineLatest(repeatPasswordObservable, passwordObservable.map({(password, _) in password}))
             .map({ (repeatPassword, password) in
-                    repeatPassword.arePasswordsEqual(password: password)}).share()
+                repeatPassword.arePasswordsEqual(password: password)}).share()
         
         repeatPasswordResultObservable
             .map({
-                    switch $0{
-                    case .empty, .valid:
-                        return ""
-                    case .invalid, .short:
-                        return "Passwords are not equal"
-                    }})
+                switch $0{
+                case .empty, .valid:
+                    return ""
+                case .invalid, .short:
+                    return "Passwords are not equal"
+                }})
             .bind(to: repeatPasswordCheckMessage)
             .disposed(by: disposeBag)
         
         emailAddressObservable
             .map({ (_, result) in
-                    switch result {
-                    case .empty, .valid:
-                        return ""
-                    case .invalid:
-                        return "The input does not respond to email address"
-                    }})
+                switch result {
+                case .empty, .valid:
+                    return ""
+                case .invalid:
+                    return "The input does not respond to email address"
+                }})
             .bind(to: emailCheckMessage)
             .disposed(by: disposeBag)
         
@@ -134,37 +138,28 @@ class RegistrationViewModel: RegistrationViewModelType {
         
         register
             .withLatestFrom(Observable.combineLatest(emailAddressObservable.map({$0.0}), passwordObservable.map({$0.0}))) { $1 }
+            .debug()
             .do(onNext: {[activityIndicator] _ in activityIndicator.accept(true)})
             .flatMapLatest({ [service] (email, password) in
-                service.authApi.createUser(email: email, password: password)
+                service.firebaseService.createUser(email: email, password: password)
             })
             .observe(on: MainScheduler.instance)
-            .do(onError: {[activityIndicator] error in
-                
+            .debug()
+            .do(onNext: {[activityIndicator] _ in activityIndicator.accept(false)}, onError: {[activityIndicator] error in
                 activityIndicator.accept(false)
                 coordinator.handle(error: error)
             })
             .retry()
-            .observe(on: SerialDispatchQueueScheduler.init(qos: .userInitiated))
-            .flatMap({[service] data in
-                service.userService.createUser(uid: data.user.uid)
-            })
             .observe(on: MainScheduler.instance)
-            .do(onNext: {[activityIndicator] _ in activityIndicator.accept(false)}, onError: {[activityIndicator] error in
-            activityIndicator.accept(false)
-            coordinator.handle(error: error)
-            })
-            .observe(on: SerialDispatchQueueScheduler(qos: .userInitiated))
-            .retry()
-            .do(onNext: {[service] uid in
-                service.userService.uid.accept(uid)
-            })
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: {[coordinator] uid in
+            .subscribe(onNext: {[coordinator] _ in
                 coordinator.registered()
             })
             .disposed(by: disposeBag)
-        
-        
+                
+                
+            goBack
+                .bind(onNext: coordinator.backToAuthorization)
+                .disposed(by: disposeBag)
     }
+    
 }

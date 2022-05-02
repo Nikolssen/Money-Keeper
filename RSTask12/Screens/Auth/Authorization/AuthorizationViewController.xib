@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthorizationViewController" customModule="RSTask12" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="lXc-z7-KlL" id="3an-Nd-9hI"/>
+                <outlet property="emailTextField" destination="lvj-1c-IqF" id="Mb4-6W-y05"/>
+                <outlet property="emailWarningLabel" destination="tTF-6k-n6q" id="5WF-Me-73l"/>
+                <outlet property="glassButton" destination="avM-2F-tP6" id="uO0-o9-uzP"/>
+                <outlet property="passwordTextField" destination="UrI-3t-ruR" id="xgl-Of-YqJ"/>
+                <outlet property="passwordWarningLabel" destination="Rgv-3i-8L5" id="pVB-5k-rBh"/>
+                <outlet property="registrationButton" destination="6jT-vH-LZB" id="I1G-wy-rq0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green" translatesAutoresizingMaskIntoConstraints="NO" id="lXc-z7-KlL">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFH-fH-GCD" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
+                    <rect key="frame" x="30" y="253" width="354" height="400"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UrI-3t-ruR" customClass="TextField" customModule="RSTask12" customModuleProvider="target">
+                            <rect key="frame" x="20" y="207.5" width="314" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="Rv1-Ps-Lyw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lvj-1c-IqF" customClass="TextField" customModule="RSTask12" customModuleProvider="target">
+                            <rect key="frame" x="20" y="90.5" width="314" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="9CC-Pf-EDj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" textContentType="email"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTF-6k-n6q">
+                            <rect key="frame" x="334" y="158" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                            <color key="textColor" name="Amaranth Red"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgv-3i-8L5">
+                            <rect key="frame" x="334" y="275" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                            <color key="textColor" name="Amaranth Red"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYS-mW-dnA">
+                            <rect key="frame" x="134.5" y="31" width="85.5" height="29.5"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avM-2F-tP6" customClass="GlassButton" customModule="RSTask12" customModuleProvider="target">
+                            <rect key="frame" x="20" y="301" width="314" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="pgi-mH-2VS"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Sign In">
+                                <color key="titleColor" name="Deep Saffron"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jT-vH-LZB">
+                            <rect key="frame" x="73.5" y="359" width="207" height="30"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Don't have account? Create it">
+                                <color key="titleColor" name="Celadon"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="avM-2F-tP6" firstAttribute="leading" secondItem="DFH-fH-GCD" secondAttribute="leading" constant="20" id="2VT-E3-D45"/>
+                        <constraint firstAttribute="bottom" secondItem="6jT-vH-LZB" secondAttribute="bottom" constant="11" id="41C-wV-XV0"/>
+                        <constraint firstItem="UrI-3t-ruR" firstAttribute="leading" secondItem="DFH-fH-GCD" secondAttribute="leading" constant="20" id="7on-Mz-VAS"/>
+                        <constraint firstItem="lvj-1c-IqF" firstAttribute="centerX" secondItem="DFH-fH-GCD" secondAttribute="centerX" id="Ajm-gZ-32a"/>
+                        <constraint firstItem="lvj-1c-IqF" firstAttribute="top" secondItem="LYS-mW-dnA" secondAttribute="bottom" constant="30" id="BI9-d2-2dM"/>
+                        <constraint firstItem="tTF-6k-n6q" firstAttribute="top" secondItem="lvj-1c-IqF" secondAttribute="bottom" constant="7.5" id="CLi-fG-siy"/>
+                        <constraint firstAttribute="height" constant="400" id="DK5-dM-qGG"/>
+                        <constraint firstItem="LYS-mW-dnA" firstAttribute="top" secondItem="DFH-fH-GCD" secondAttribute="top" constant="31" id="EeM-Zu-Qvo"/>
+                        <constraint firstItem="Rgv-3i-8L5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DFH-fH-GCD" secondAttribute="leading" constant="20" id="SM3-lK-rwx"/>
+                        <constraint firstItem="avM-2F-tP6" firstAttribute="centerX" secondItem="DFH-fH-GCD" secondAttribute="centerX" id="Ts4-MU-1w0"/>
+                        <constraint firstItem="lvj-1c-IqF" firstAttribute="leading" secondItem="DFH-fH-GCD" secondAttribute="leading" constant="20" id="YUZ-Kq-b6K"/>
+                        <constraint firstItem="tTF-6k-n6q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DFH-fH-GCD" secondAttribute="leading" constant="20" id="h9G-OU-wqa"/>
+                        <constraint firstAttribute="trailing" secondItem="Rgv-3i-8L5" secondAttribute="trailing" constant="20" id="hnx-FZ-gvd"/>
+                        <constraint firstAttribute="trailing" secondItem="tTF-6k-n6q" secondAttribute="trailing" constant="20" id="ln3-z0-HOQ"/>
+                        <constraint firstItem="6jT-vH-LZB" firstAttribute="top" secondItem="avM-2F-tP6" secondAttribute="bottom" constant="8" symbolic="YES" id="rWV-Kw-tJD"/>
+                        <constraint firstItem="Rgv-3i-8L5" firstAttribute="top" secondItem="UrI-3t-ruR" secondAttribute="bottom" constant="7.5" id="sj8-KZ-0Cr"/>
+                        <constraint firstItem="UrI-3t-ruR" firstAttribute="centerX" secondItem="DFH-fH-GCD" secondAttribute="centerX" id="wre-zH-5cn"/>
+                        <constraint firstItem="LYS-mW-dnA" firstAttribute="centerX" secondItem="DFH-fH-GCD" secondAttribute="centerX" id="wtg-Cz-TkU"/>
+                        <constraint firstItem="6jT-vH-LZB" firstAttribute="centerX" secondItem="DFH-fH-GCD" secondAttribute="centerX" id="yCf-9s-7IJ"/>
+                        <constraint firstItem="UrI-3t-ruR" firstAttribute="top" secondItem="lvj-1c-IqF" secondAttribute="bottom" constant="57" id="yRc-U6-bkW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="DFH-fH-GCD" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="4W2-MK-dHD"/>
+                <constraint firstAttribute="bottom" secondItem="lXc-z7-KlL" secondAttribute="bottom" id="81E-Ee-t2s"/>
+                <constraint firstItem="lXc-z7-KlL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LuM-MR-D8k"/>
+                <constraint firstItem="DFH-fH-GCD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="aeq-2c-UlI"/>
+                <constraint firstItem="lXc-z7-KlL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bcb-Tj-pvM"/>
+                <constraint firstAttribute="trailing" secondItem="lXc-z7-KlL" secondAttribute="trailing" id="nVl-Zv-bAg"/>
+                <constraint firstItem="DFH-fH-GCD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="vsj-hq-svU"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="green" width="512" height="512"/>
+        <namedColor name="Amaranth Red">
+            <color red="0.84313725490196079" green="0.14901960784313725" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Celadon">
+            <color red="0.21176470588235294" green="0.66666666666666663" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Deep Saffron">
+            <color red="0.95686274509803926" green="0.61568627450980395" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

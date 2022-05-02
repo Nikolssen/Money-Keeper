@@ -5,6 +5,8 @@
 //  Created by Ivan Budovich on 9/27/21.
 //
 import UIKit
+import Firebase
+import FirebaseAuth
 
 final class Coordinator {
     let rootViewController: UINavigationController = UINavigationController()
@@ -14,7 +16,13 @@ final class Coordinator {
     
     func start() {
         rootViewController.setNavigationBarHidden(true, animated: false)
-        rootViewController.setViewControllers([walletListController], animated: false)
+        if Auth.auth().currentUser?.uid != nil {
+            rootViewController.setViewControllers([walletListController], animated: false)
+        } else {
+            rootViewController.setViewControllers([signInController], animated: false)
+        }
+        
+
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
     }
@@ -34,6 +42,18 @@ extension Coordinator {
         let viewModel = WalletListViewModel(service: service, coordinator: self)
         viewModel.delegate = controller
         controller.viewModel = viewModel
+        return controller
+    }
+    
+    var signInController: AuthorizationViewController {
+        let controller = AuthorizationViewController(nibName: "AuthorizationViewController", bundle: nil)
+        controller.viewModel = AuthorizationViewModel(coordinator: self, service: service)
+        return controller
+    }
+    
+    var signUpController: RegistrationViewController {
+        let controller = RegistrationViewController(nibName: "RegistrationViewController", bundle: nil)
+        controller.viewModel = RegistrationViewModel(coordinator: self, service: service)
         return controller
     }
     
@@ -125,4 +145,45 @@ extension Coordinator: WalletListCoordinator, WalletSettingsCoordinator,
         rootViewController.pushViewController(controller, animated: true)
     }
     
+}
+
+extension Coordinator: AuthorizationViewModelCoordinator, RegistrationViewModelCoordinator{
+    func goToRegistration() {
+        rootViewController.pushViewController(signUpController, animated: true)
+    }
+    
+    func loggedIn() {
+        rootViewController.setViewControllers([walletListController], animated: true)
+    }
+    
+    func registered() {
+        rootViewController.setViewControllers([walletListController], animated: true)
+    }
+    
+    func backToAuthorization() {
+        rootViewController.popViewController(animated: true)
+    }
+    
+    func handle(error: Error){
+        let nsError = error as NSError
+        var message = String()
+        switch nsError.code {
+        //Firebase Auth Errors
+        case AuthErrorCode.invalidRecipientEmail.rawValue, AuthErrorCode.invalidEmail.rawValue:
+            message = "The user with this email address does not exist."
+        case AuthErrorCode.userDisabled.rawValue:
+            message = "The account with this email address was disabled."
+        case AuthErrorCode.wrongPassword.rawValue, AuthErrorCode.userNotFound.rawValue:
+            message = "The user does not exist or the password is wrong."
+        case AuthErrorCode.emailAlreadyInUse.rawValue:
+            message = "This is email is already in use."
+        case AuthErrorCode.networkError.rawValue:
+            message = "The network connection was lost during request."
+        case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+            message = "Make sure you are using appropriate way of authorization."
+        default:
+            message = "An error happened. Please, make sure your data is valid and internet connection is stable."
+        }
+        rootViewController.topViewController?.toastBinding.onNext(message)
+    }
 }

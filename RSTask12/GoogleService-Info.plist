@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>125521795421-hv09jdu723cpkekae8cjoibntqtth8ds.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.125521795421-hv09jdu723cpkekae8cjoibntqtth8ds</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBRb7pPlVcBMP9N6xv_PmHbOjrrW3e9YmU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>125521795421</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Ivan-Budovich.RSTask12</string>
+	<key>PROJECT_ID</key>
+	<string>moneykeeper-2b633</string>
+	<key>STORAGE_BUCKET</key>
+	<string>moneykeeper-2b633.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:125521795421:ios:7d559f8cc1194f980530b4</string>
+</dict>
+</plist>
