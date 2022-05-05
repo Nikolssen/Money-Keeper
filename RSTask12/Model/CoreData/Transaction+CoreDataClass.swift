@@ -2,7 +2,7 @@
 //  Transaction+CoreDataClass.swift
 //  RSTask12
 //
-//  Created by Ivan Budovich on 10/4/21.
+//  Created by Ivan Budovich on 5/2/22.
 //
 //
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-@objc enum ColorTheme: Int32, CaseIterable {
+@objc public enum ColorTheme: Int32, CaseIterable {
     case yellow, red, violet, green, blue, vista, aurora, morningStar, romance
 }
 

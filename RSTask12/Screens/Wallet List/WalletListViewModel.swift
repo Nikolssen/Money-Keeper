@@ -13,12 +13,14 @@ protocol WalletListViewModelling: UICollectionViewDataSource {
     func walletSelected(at index: Int)
     func update()
     var backgroundImage: UIImage { get }
+    func logout()
 }
 
 protocol WalletListCoordinator {
     var colorTheme: ColorTheme { get }
     func goToNewWallet()
     func goToWallet(walletInfo: WalletInfo)
+    func goToAuth()
 }
 
 protocol WalletListViewModelDelegate: AnyObject {
@@ -76,5 +78,9 @@ final class WalletListViewModel: NSObject, WalletListViewModelling {
     
     func update() {
         wallets = service.coreDataService.fetchWallets()
+    }
+    func logout() {
+        _ = service.firebaseService.logout()
+        coordinator.goToAuth()
     }
 }

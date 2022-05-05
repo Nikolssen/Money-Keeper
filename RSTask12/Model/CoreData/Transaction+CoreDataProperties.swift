@@ -2,7 +2,7 @@
 //  Transaction+CoreDataProperties.swift
 //  RSTask12
 //
-//  Created by Ivan Budovich on 10/4/21.
+//  Created by Ivan Budovich on 5/2/22.
 //
 //
 
@@ -22,6 +22,8 @@ extension Transaction {
     @NSManaged public var isOutcome: Bool
     @NSManaged public var note: String?
     @NSManaged public var title: String
+    @NSManaged public var user: String
+    @NSManaged public var walletId: String
     @NSManaged public var wallet: Wallet?
 
 }

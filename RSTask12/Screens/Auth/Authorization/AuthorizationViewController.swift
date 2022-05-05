@@ -55,6 +55,10 @@ final class AuthorizationViewController: UIViewController {
         glassButton.layer.cornerRadius = 20
         glassButton.layer.masksToBounds = true
         
+        viewModel.activityIndicator
+            .bind(to: activityIndicatorBinding)
+            .disposed(by: disposeBag)
+        
         glassButton
             .rx.tap
             .bind(to: viewModel.login)

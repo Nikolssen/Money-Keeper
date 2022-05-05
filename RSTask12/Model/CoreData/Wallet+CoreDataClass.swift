@@ -2,7 +2,7 @@
 //  Wallet+CoreDataClass.swift
 //  RSTask12
 //
-//  Created by Ivan Budovich on 9/29/21.
+//  Created by Ivan Budovich on 5/2/22.
 //
 //
 

@@ -2,7 +2,7 @@
 //  Wallet+CoreDataProperties.swift
 //  RSTask12
 //
-//  Created by Ivan Budovich on 9/29/21.
+//  Created by Ivan Budovich on 5/2/22.
 //
 //
 
@@ -16,9 +16,12 @@ extension Wallet {
         return NSFetchRequest<Wallet>(entityName: "Wallet")
     }
 
-    @NSManaged public var colorTheme: Int32
+    @NSManaged public var colorTheme: ColorTheme
     @NSManaged public var currencyCode: String
     @NSManaged public var title: String
+    @NSManaged public var user: String
+    @NSManaged public var id: String
+    @NSManaged public var walletId: String
     @NSManaged public var transactions: NSOrderedSet?
 
 }

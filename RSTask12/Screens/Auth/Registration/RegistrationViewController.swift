@@ -56,6 +56,10 @@ final class RegistrationViewController: UIViewController {
             .bind(to: glassButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
+        viewModel.activityIndicator
+            .bind(to: activityIndicatorBinding)
+            .disposed(by: disposeBag)
+        
         glassButton
             .rx.tap
             .bind(to: viewModel.register)

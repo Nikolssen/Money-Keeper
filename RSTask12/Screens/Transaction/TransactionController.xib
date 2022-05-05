@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -49,8 +49,8 @@
                     <rect key="frame" x="20" y="208" width="374" height="537.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImU-Nb-8dF">
-                            <rect key="frame" x="30" y="30" width="102" height="44"/>
-                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="36"/>
+                            <rect key="frame" x="30" y="30" width="67.5" height="29.5"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                             <color key="textColor" name="Rick Black FOGRA 29"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -63,16 +63,16 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPh-QL-AKR">
-                            <rect key="frame" x="30" y="129" width="132" height="58"/>
-                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="47"/>
+                            <rect key="frame" x="30" y="114.5" width="93" height="40.5"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="33"/>
                             <color key="textColor" name="Rick Black FOGRA 29"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUn-zB-kez" customClass="GlassView" customModule="RSTask12" customModuleProvider="target">
-                            <rect key="frame" x="30" y="232" width="314" height="237"/>
+                            <rect key="frame" x="30" y="200" width="314" height="269"/>
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXR-bI-lRv">
-                                    <rect key="frame" x="8" y="44" width="298" height="184"/>
+                                    <rect key="frame" x="8" y="44" width="298" height="216"/>
                                     <color key="textColor" name="Rick Black FOGRA 29"/>
                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -108,6 +108,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="XZd-T4-wfg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ImU-Nb-8dF" secondAttribute="trailing" constant="20" id="AbR-o0-L7v"/>
                         <constraint firstItem="BPh-QL-AKR" firstAttribute="leading" secondItem="oOW-TN-JqI" secondAttribute="leading" constant="30" id="EHU-eg-Or1"/>
                         <constraint firstItem="RUn-zB-kez" firstAttribute="top" secondItem="BPh-QL-AKR" secondAttribute="bottom" constant="45" id="ESN-Tm-T8H"/>
                         <constraint firstItem="yBd-Cc-2Xy" firstAttribute="centerX" secondItem="oOW-TN-JqI" secondAttribute="centerX" id="G2H-QP-T5l"/>
@@ -133,7 +134,7 @@
                 <constraint firstItem="zbD-5y-exN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MIj-WQ-0g0"/>
                 <constraint firstItem="oOW-TN-JqI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NZA-NP-Baa"/>
                 <constraint firstItem="qZi-FM-7SX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YTN-fQ-bqC"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="zbD-5y-exN" secondAttribute="top" constant="44" id="i9h-ts-7vg"/>
+                <constraint firstItem="zbD-5y-exN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i9h-ts-7vg"/>
                 <constraint firstItem="qZi-FM-7SX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="iWE-zy-65H"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zbD-5y-exN" secondAttribute="trailing" id="kHA-HR-HfU"/>
                 <constraint firstItem="oOW-TN-JqI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="qih-AR-Arj"/>

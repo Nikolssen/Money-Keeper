@@ -96,7 +96,7 @@
                                 <constraint firstAttribute="height" constant="50" id="y1L-JI-7ga"/>
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="Sign up"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

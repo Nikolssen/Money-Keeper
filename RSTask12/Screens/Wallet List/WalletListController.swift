@@ -22,7 +22,8 @@ final class WalletListController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = viewModel
 
-        glassBar.trailingHandler = viewModel.newWallet
+        glassBar.trailingHandler = viewModel.logout
+        glassBar.leadingHandler = viewModel.newWallet
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -124,8 +124,10 @@ class AuthorizationViewModel: AuthorizationViewModelType {
 
             })
             .retry()
-            .subscribe(onNext: {[coordinator] data in
+            .subscribe(onNext: {[service, coordinator] data in
+                service.coreDataService.clearAll(completion: {
                     coordinator.loggedIn()
+                })
                 })
             .disposed(by: disposeBag)
         

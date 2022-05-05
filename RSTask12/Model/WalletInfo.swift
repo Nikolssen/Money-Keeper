@@ -18,6 +18,6 @@ struct WalletInfo {
 extension Wallet {
     
     var walletInfo: WalletInfo {
-        WalletInfo(theme: ColorTheme(rawValue: colorTheme)!, currencyCode: currencyCode, title: title, id: objectID)
+        WalletInfo(theme: colorTheme, currencyCode: currencyCode, title: title, id: objectID)
     }
 }

@@ -28,7 +28,7 @@ final class NewTransactionViewModel: TransactionSettingsViewModelling {
         }
         
         delegate?.showAlert(title: "Commiting new transaction.", message: "Would you like to commit a transaction?", leftButtonTitle: "Yes", rightButtonTitle: "No", leftButtonAction: { [weak self] in guard let self = self else { return }
-            self.service.coreDataService.addTransaction(transactionInfo: self.transactionInfo, in: self.walletInfo)
+            self.service.coreDataService.addTransaction(transactionInfo: self.transactionInfo, in: self.walletInfo, withUpdate: true)
             self.coordinator.goBack()
         }, rightButtonAction: {[weak self] in self?.coordinator.goBack()})
         
@@ -96,7 +96,7 @@ final class NewTransactionViewModel: TransactionSettingsViewModelling {
         self.coordinator = coordinator
         self.service = service
         self.walletInfo = walletInfo
-        self.transactionInfo = TransactionInfo(title: "", date: Date(), isOutcome: true, change: 0, category: .other, note: nil, id: nil)
+        self.transactionInfo = TransactionInfo(title: "", date: Date(), isOutcome: true, change: 0, category: .other, note: nil, id: nil, walletId: walletInfo.title)
     }
     
 }

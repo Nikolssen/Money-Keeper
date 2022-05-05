@@ -16,11 +16,12 @@ struct TransactionInfo {
     var category: TransactionInfo.Category
     var note: String?
     var id: NSManagedObjectID?
+    var walletId: String
 }
 
 extension Transaction {
     var transactionInfo: TransactionInfo {
-        TransactionInfo(title: title, date: date, isOutcome: isOutcome, change: change.decimalValue, category: TransactionInfo.Category(rawValue: category)!, note: note, id: objectID)
+        TransactionInfo(title: title, date: date, isOutcome: isOutcome, change: change.decimalValue, category: TransactionInfo.Category(rawValue: category)!, note: note, id: objectID, walletId: walletId)
     }
 }
 
@@ -39,9 +40,6 @@ extension TransactionInfo {
         case other
     }
     
-//    var cellViewModel: TransactionCellViewModel {
-//        TransactionCellViewModel(transferedMoney: Currency.currencyFormat(for: change, code: ), purpose: title, date: date.toShortFormat, icon: self.category.icon, isWithdrawal: isOutcome)
-//    }
 }
 
 extension TransactionInfo.Category {

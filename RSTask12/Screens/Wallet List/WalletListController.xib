@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b6X-vx-eg6">
-                    <rect key="frame" x="0.0" y="0.0" width="416" height="898"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V38-tg-UeO" customClass="GlassBar" customModule="RSTask12" customModuleProvider="target">
@@ -40,8 +40,9 @@
                         <constraint firstAttribute="height" constant="75" id="UM4-Nz-bRw"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="circle.plus"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="escape" catalog="system"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="Wallets"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="circle.plus"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9Jy-dG-ZTA">
@@ -55,7 +56,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No wallets created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz2-I2-wbi">
-                    <rect key="frame" x="93" y="434.5" width="230" height="29.5"/>
+                    <rect key="frame" x="92" y="433.5" width="230" height="29.5"/>
                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -68,11 +69,11 @@
                 <constraint firstItem="Nz2-I2-wbi" firstAttribute="centerX" secondItem="b6X-vx-eg6" secondAttribute="centerX" id="A4v-7A-gYR"/>
                 <constraint firstAttribute="top" secondItem="b6X-vx-eg6" secondAttribute="top" id="Dgb-eD-lb0"/>
                 <constraint firstItem="V38-tg-UeO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FuM-0m-ZS3"/>
-                <constraint firstItem="b6X-vx-eg6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="36" id="UeJ-tc-bg8"/>
+                <constraint firstItem="b6X-vx-eg6" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="UeJ-tc-bg8"/>
                 <constraint firstAttribute="bottom" secondItem="9Jy-dG-ZTA" secondAttribute="bottom" id="aZB-5M-9qT"/>
                 <constraint firstItem="9Jy-dG-ZTA" firstAttribute="top" secondItem="V38-tg-UeO" secondAttribute="bottom" constant="40" id="fda-tr-aGA"/>
                 <constraint firstItem="Nz2-I2-wbi" firstAttribute="centerY" secondItem="b6X-vx-eg6" secondAttribute="centerY" id="h2C-Lg-NDl"/>
-                <constraint firstItem="b6X-vx-eg6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="2" id="hyE-yV-TVX"/>
+                <constraint firstItem="b6X-vx-eg6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hyE-yV-TVX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Jy-dG-ZTA" secondAttribute="trailing" id="iET-Gr-zHo"/>
                 <constraint firstItem="V38-tg-UeO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="kSi-q0-gm3"/>
                 <constraint firstItem="9Jy-dG-ZTA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="l8r-fN-dak"/>
@@ -83,6 +84,7 @@
     </objects>
     <resources>
         <image name="circle.plus" width="40" height="40"/>
+        <image name="escape" catalog="system" width="128" height="121"/>
         <namedColor name="Dark Purple">
             <color red="0.078431372549019607" green="0.058823529411764705" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

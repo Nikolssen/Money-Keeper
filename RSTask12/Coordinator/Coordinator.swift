@@ -145,6 +145,9 @@ extension Coordinator: WalletListCoordinator, WalletSettingsCoordinator,
         rootViewController.pushViewController(controller, animated: true)
     }
     
+    func goToAuth() {
+        rootViewController.setViewControllers([signInController], animated: true)
+    }
 }
 
 extension Coordinator: AuthorizationViewModelCoordinator, RegistrationViewModelCoordinator{

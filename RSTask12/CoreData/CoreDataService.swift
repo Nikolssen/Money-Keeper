@@ -7,6 +7,8 @@
 
 import Foundation
 import CoreData
+import Firebase
+import FirebaseAuth
 
 protocol CoreDataServiceType {
     
@@ -18,8 +20,8 @@ protocol CoreDataServiceType {
     func totalBalance(for wallet: WalletInfo) -> Decimal
     func lastChangeDate(for wallet: WalletInfo) -> Date?
     
-    func addNewWallet(walletInfo: WalletInfo)
-    func addTransaction(transactionInfo: TransactionInfo, in wallet: WalletInfo)
+    func addNewWallet(walletInfo: WalletInfo, withUpdate: Bool)
+    func addTransaction(transactionInfo: TransactionInfo, in wallet: WalletInfo, withUpdate: Bool)
     
     func changeWallet(walletInfo: WalletInfo)
     func changeTransaction(transactionInfo: TransactionInfo)
@@ -31,9 +33,9 @@ protocol CoreDataServiceType {
     func deleteWallet(with id: NSManagedObjectID)
     func deleteTransaction(transaction: TransactionInfo, from wallet: WalletInfo)
     
-    
-    
+    func clearAll(completion: @escaping ()->())
     func saveContext()
+    var firebaseService: FirebasePersistanceService! { get }
 }
 
 
@@ -41,7 +43,8 @@ final class CoreDataService: NSObject, CoreDataServiceType {
     
     let managedObjectContext: NSManagedObjectContext
     let persistentContainer: NSPersistentContainer
-    
+    let viewContext: NSManagedObjectContext
+    var firebaseService: FirebasePersistanceService!
     
     
     func doesWalletTitleExist(walletInfo: WalletInfo) -> Bool {
@@ -111,19 +114,24 @@ final class CoreDataService: NSObject, CoreDataServiceType {
         return date
     }
     
-    func addNewWallet(walletInfo: WalletInfo)  {
+    func addNewWallet(walletInfo: WalletInfo, withUpdate: Bool)  {
         let wallet = Wallet(context: self.managedObjectContext)
         wallet.title = walletInfo.title
         wallet.currencyCode = walletInfo.currencyCode
-        wallet.colorTheme = walletInfo.theme.rawValue
+        wallet.colorTheme = walletInfo.theme
         wallet.transactions = []
+        wallet.user = Firebase.Auth.auth().currentUser?.uid ?? ""
         saveContext()
+        if withUpdate {
+            firebaseService.addWallet(walletInfo: walletInfo)
+        }
     }
     
-    func addTransaction(transactionInfo: TransactionInfo, in wallet: WalletInfo) {
+    func addTransaction(transactionInfo: TransactionInfo, in wallet: WalletInfo, withUpdate: Bool) {
         guard let id = wallet.id, let wallet = managedObjectContext.object(with: id) as? Wallet else { return }
         let transaction = Transaction(context: self.managedObjectContext)
         transaction.wallet = wallet
+        transaction.walletId = wallet.title
         transaction.change = NSDecimalNumber(decimal: transactionInfo.change)
         transaction.category = transactionInfo.category.rawValue
         transaction.date = transactionInfo.date
@@ -132,20 +140,25 @@ final class CoreDataService: NSObject, CoreDataServiceType {
         transaction.isOutcome = transactionInfo.isOutcome
         wallet.addToTransactions(transaction)
         saveContext()
+        if withUpdate {
+            firebaseService.addTransaction(transaction: transactionInfo)
+        }
     }
     
     func deleteTransaction(transaction: TransactionInfo, from wallet: WalletInfo) {
-        guard let id = transaction.id, let transaction = managedObjectContext.object(with: id) as? Transaction, let walletID = wallet.id, let wallet = managedObjectContext.object(with: walletID) as? Wallet else {return}
-        wallet.removeFromTransactions(transaction)
+        guard let id = transaction.id, let transactionModel = managedObjectContext.object(with: id) as? Transaction, let walletID = wallet.id, let wallet = managedObjectContext.object(with: walletID) as? Wallet else {return}
+        wallet.removeFromTransactions(transactionModel)
         saveContext()
+        firebaseService.deleteTransaction(transaction: transaction)
     }
     
     func changeWallet(walletInfo: WalletInfo) {
         guard let id = walletInfo.id, let wallet = managedObjectContext.object(with: id) as? Wallet else { return }
         wallet.currencyCode = walletInfo.currencyCode
         wallet.title = walletInfo.title
-        wallet.colorTheme = walletInfo.theme.rawValue
+        wallet.colorTheme = walletInfo.theme
         saveContext()
+        firebaseService.updateWallet(walletInfo: walletInfo)
     }
     
     func changeTransaction(transactionInfo: TransactionInfo) {
@@ -156,6 +169,7 @@ final class CoreDataService: NSObject, CoreDataServiceType {
         transaction.title = transactionInfo.title
         transaction.category = transactionInfo.category.rawValue
         saveContext()
+        firebaseService.updateTransaction(transaction: transactionInfo)
     }
     
     
@@ -169,6 +183,9 @@ final class CoreDataService: NSObject, CoreDataServiceType {
     }
     
     func deleteWallet(with id: NSManagedObjectID) {
+        if let wallet = wallet(with: id) {
+            firebaseService.deleteWallet(walletInfo: wallet)
+        }
         managedObjectContext.delete(managedObjectContext.object(with: id))
         saveContext()
     }
@@ -181,6 +198,9 @@ final class CoreDataService: NSObject, CoreDataServiceType {
             }
         })
         managedObjectContext = persistentContainer.newBackgroundContext()
+        viewContext = persistentContainer.viewContext
+        super.init()
+        self.firebaseService = .init(service: self)
     }
     
     func saveContext() {
@@ -192,6 +212,25 @@ final class CoreDataService: NSObject, CoreDataServiceType {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func clearAll(completion: @escaping ()->()) {
+        func deleteAllData(_ entity:String) {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+            fetchRequest.returnsObjectsAsFaults = false
+            do {
+                let results = try viewContext.fetch(fetchRequest)
+                for object in results {
+                    guard let objectData = object as? NSManagedObject else {continue}
+                    viewContext.delete(objectData)
+                }
+            } catch let error {
+                print("Detele all data in \(entity) error :", error)
+            }
+        }
+        deleteAllData("Wallet")
+        deleteAllData("Transaction")
+        completion()
     }
     
 }

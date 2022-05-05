@@ -145,14 +145,20 @@ class RegistrationViewModel: RegistrationViewModelType {
             })
             .observe(on: MainScheduler.instance)
             .debug()
-            .do(onNext: {[activityIndicator] _ in activityIndicator.accept(false)}, onError: {[activityIndicator] error in
+            .do(onNext: {_ in }, onError: {[activityIndicator] error in
                 activityIndicator.accept(false)
                 coordinator.handle(error: error)
             })
             .retry()
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: {[coordinator] _ in
-                coordinator.registered()
+            .subscribe(onNext: {[activityIndicator, service, coordinator] _ in
+                service.coreDataService.clearAll {
+                    service.coreDataService.firebaseService.fetch {
+                        activityIndicator.accept(false)
+                        coordinator.registered()
+                    }
+                }
+                
             })
             .disposed(by: disposeBag)
                 

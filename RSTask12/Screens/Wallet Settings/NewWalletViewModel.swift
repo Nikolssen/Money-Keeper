@@ -43,7 +43,7 @@ class NewWalletViewModel: SettingsViewModelling {
         delegate?.showAlert(title: "Confirming new wallet", message: "Would you like to add wallet to your wallet list?", leftButtonTitle: "Yes", rightButtonTitle: "No", leftButtonAction: {[weak self]
             in
             guard let self = self else {return}
-            self.service.coreDataService.addNewWallet(walletInfo: self.walletInfo)
+            self.service.coreDataService.addNewWallet(walletInfo: self.walletInfo, withUpdate: true)
             self.coordinator.goBack()}, rightButtonAction: {[weak self] in self?.coordinator.goBack()})
             
     }

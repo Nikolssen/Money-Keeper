@@ -38,8 +38,6 @@ class FirebaseService {
                 }
                 else {
                     if let result = result {
-//                        let firestore = Firestore.firestore()
-//                        firestore.collection("users").addDocument(data: ["uid": result.user.uid])
                         single(.success(result))
                     }
                     else {
