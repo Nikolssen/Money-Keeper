@@ -35,7 +35,7 @@ private extension UIViewController {
     }
     func showActivityIndicatorSpinner(){
         
-        let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+        let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
         effectView.alpha = 0.0
         effectView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(effectView)
@@ -56,9 +56,9 @@ private extension UIViewController {
         spinner.restorationIdentifier = restID
         effectView.restorationIdentifier = spinnerBlurID
         UIView.animate(withDuration: 0.3, animations: {
-            effectView.alpha = 0.9
+            effectView.alpha = 1.0
         }, completion: { _ in
-            spinner.startAnimation(delay: 0.04, replicates: 18)
+            spinner.startAnimation(delay: 0.04, replicates: 10)
         })
     }
     

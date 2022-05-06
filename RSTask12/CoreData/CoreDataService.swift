@@ -35,11 +35,15 @@ protocol CoreDataServiceType {
     
     func clearAll(completion: @escaping ()->())
     func saveContext()
+    
+    func changeForToday()
+    
     var firebaseService: FirebasePersistanceService! { get }
 }
 
 
 final class CoreDataService: NSObject, CoreDataServiceType {
+
     
     let managedObjectContext: NSManagedObjectContext
     let persistentContainer: NSPersistentContainer
@@ -230,7 +234,44 @@ final class CoreDataService: NSObject, CoreDataServiceType {
         }
         deleteAllData("Wallet")
         deleteAllData("Transaction")
+        try? viewContext.save()
         completion()
+    }
+    
+    func changeForToday()  {
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+
+        // Get today's beginning & end
+        let dateFrom = calendar.startOfDay(for: Date())
+        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)!
+        // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
+
+        // Set predicate as date being today's date
+//        let fromPredicate = NSPredicate(format: "%@ >= %K", dateFrom as NSDate, #keyPath(Transaction.date))
+//        let toPredicate = NSPredicate(format: "%K < %@", #keyPath(Transaction.date), dateTo as NSDate)
+//        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+        
+        let fetchRequest = NSFetchRequest<Transaction>(entityName: "Transaction")
+        //fetchRequest.predicate = datePredicate
+        guard let transactions = try? managedObjectContext.fetch(fetchRequest) else {
+            UserDefaults.init(suiteName: "group.budovich.task")?.set(nil, forKey: "WidgetInfo")
+            return }
+        
+        let dict = Dictionary(grouping: transactions, by: \.wallet?.currencyCode)
+        var newDict = [String: Double]()
+        for (key, values) in dict {
+            let value = values.reduce(into: 0.0, { if $1.isOutcome { $0 -= Double(truncating: $1.change) } else { $0 += Double(truncating: $1.change) } })
+            if let key = key {
+                newDict.updateValue(value, forKey: key)
+            }
+        }
+    
+        let parser = PropertyListEncoder()
+        guard !newDict.isEmpty, let data = try? parser.encode(newDict) else {
+            UserDefaults.init(suiteName: "group.budovich.task")?.set(nil, forKey: "WidgetInfo")
+            return }
+        UserDefaults.init(suiteName: "group.budovich.task")?.set(data, forKey: "WidgetInfo")
     }
     
 }

@@ -153,10 +153,8 @@ class RegistrationViewModel: RegistrationViewModelType {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: {[activityIndicator, service, coordinator] _ in
                 service.coreDataService.clearAll {
-                    service.coreDataService.firebaseService.fetch {
                         activityIndicator.accept(false)
                         coordinator.registered()
-                    }
                 }
                 
             })

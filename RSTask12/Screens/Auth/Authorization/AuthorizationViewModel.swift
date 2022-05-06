@@ -126,7 +126,9 @@ class AuthorizationViewModel: AuthorizationViewModelType {
             .retry()
             .subscribe(onNext: {[service, coordinator] data in
                 service.coreDataService.clearAll(completion: {
-                    coordinator.loggedIn()
+                    service.coreDataService.firebaseService.fetch {
+                        coordinator.loggedIn()
+                    }
                 })
                 })
             .disposed(by: disposeBag)

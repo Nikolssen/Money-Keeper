@@ -38,7 +38,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jnf-Hh-E0q">
-                    <rect key="frame" x="0.0" y="-44" width="414" height="1212"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="1168"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzy-ec-Zdd" customClass="GlassBar" customModule="RSTask12" customModuleProvider="target">
                     <rect key="frame" x="20" y="20" width="374" height="75"/>
@@ -237,7 +237,7 @@
                 <constraint firstItem="jzy-ec-Zdd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Eb0-3Z-inp"/>
                 <constraint firstItem="Jnf-Hh-E0q" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Eyt-FD-12Y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cmz-QV-cd8" secondAttribute="trailing" id="bax-ta-YaN"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="Jnf-Hh-E0q" secondAttribute="top" constant="44" id="hqT-hM-nCJ"/>
+                <constraint firstItem="Jnf-Hh-E0q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hqT-hM-nCJ"/>
                 <constraint firstItem="jzy-ec-Zdd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ppL-w3-gGy"/>
                 <constraint firstItem="cmz-QV-cd8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="puc-0V-Tqa"/>
                 <constraint firstItem="Jnf-Hh-E0q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qkz-fs-i4p"/>

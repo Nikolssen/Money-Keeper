@@ -9,10 +9,17 @@ import UIKit
 
 final class GlassButton: UIButton {
     
+    override var isEnabled: Bool {
+        willSet {
+            alpha = newValue ? 1 : 0.5
+        }
+    }
+    
     @objc enum GlassButtonStyle: Int {
         case destructive
         case normal
     }
+    private var glassView: GlassView!
     
     @IBInspectable var glassStyle: GlassButtonStyle = .normal {
         willSet {
@@ -47,6 +54,7 @@ final class GlassButton: UIButton {
             glassView.topAnchor.constraint(equalTo: topAnchor),
             glassView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        self.glassView = glassView
         setTitleColor(.deepSaffron, for: .highlighted)
         switch glassStyle {
         case .normal:
@@ -55,7 +63,12 @@ final class GlassButton: UIButton {
             setTitleColor(.amaranthRed, for: .normal)
         }
         titleEdgeInsets = UIEdgeInsets(top: 6.5, left: 24, bottom: 6.5, right: 24)
-        glassView.radius = 8
+        glassView.radius = frame.height / 3
     }
 
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        glassView.radius = frame.height / 3
+    }
 }

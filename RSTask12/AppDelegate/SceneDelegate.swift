@@ -8,6 +8,8 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Firebase
+import FirebaseAuth
+import WidgetKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -26,12 +28,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         
     }
-
+    func sceneWillResignActive(_ scene: UIScene) {
+        updateWidgetData()
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
     func sceneDidEnterBackground(_ scene: UIScene) {
         coordinator?.service.coreDataService.saveContext()
-        UserDefaults.init(suiteName: "group.task12")?.set("PPP", forKey: "Main")
     }
 
-
+    private func updateWidgetData() {
+        
+        guard Firebase.Auth.auth().currentUser?.uid != nil else {
+        
+            UserDefaults.init(suiteName: "group.budovich.task")?.set(false, forKey: "UserForWidget")
+            return
+        }
+            UserDefaults.init(suiteName: "group.budovich.task")?.set(true, forKey: "UserForWidget")
+        if let service = coordinator?.service.coreDataService {
+            service.changeForToday()
+        }
+    }
 }
-

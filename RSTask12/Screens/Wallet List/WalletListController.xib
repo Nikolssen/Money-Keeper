@@ -40,7 +40,7 @@
                         <constraint firstAttribute="height" constant="75" id="UM4-Nz-bRw"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="escape" catalog="system"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="rectangle.portrait.and.arrow.right" catalog="system"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="Wallets"/>
                         <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="circle.plus"/>
                     </userDefinedRuntimeAttributes>
@@ -84,7 +84,7 @@
     </objects>
     <resources>
         <image name="circle.plus" width="40" height="40"/>
-        <image name="escape" catalog="system" width="128" height="121"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <namedColor name="Dark Purple">
             <color red="0.078431372549019607" green="0.058823529411764705" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
