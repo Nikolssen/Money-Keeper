@@ -79,7 +79,6 @@ final class WalletListViewModel: NSObject, WalletListViewModelling {
     func update() {
         wallets = service.coreDataService.fetchWallets()
         service.coreDataService.changeForToday()
-        print(data())
     }
     func logout() {
         _ = service.firebaseService.logout()
@@ -87,21 +86,5 @@ final class WalletListViewModel: NSObject, WalletListViewModelling {
             coordinator.goToAuth()
         }
         
-    }
-    func data() -> ([(String, Double)], Bool)? {
-        guard let userDefaults = UserDefaults.init(suiteName: "group.budovich.task") else { return nil }
-        let isAuthorized = userDefaults.value(forKey: "UserForWidget") as? Bool ?? false
-        if isAuthorized {
-            let dictData = userDefaults.value(forKey: "WidgetInfo") as? Data
-            if let dictData = dictData {
-                let decoder = PropertyListDecoder()
-                let dict = try? decoder.decode([String: Double].self, from: dictData)
-                if let dict = dict {
-                    let array = dict.map { ($0, $1) }
-                    return (array, isAuthorized)
-                }
-            }
-        }
-        return ([], false)
     }
 }

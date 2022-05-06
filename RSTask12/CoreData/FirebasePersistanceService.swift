@@ -50,12 +50,13 @@ final class FirebasePersistanceService {
                         guard let title = data["title"] as? String,
                               let date = (data["date"] as? Timestamp)?.dateValue(),
                               let isOutcome = data["isOutcome"] as? Bool,
-                              let change = data["change"] as? Decimal,
+                              let change = data["change"] as? Double,
                               let walletId = data["wallet"] as? String,
                               let categoryInt = data["category"] as? Int32,
                               let category = TransactionInfo.Category.init(rawValue: categoryInt) else { return nil }
                         let note = data["note"] as? String
-                        return TransactionInfo(title: title, date: date, isOutcome: isOutcome, change: change, category: category, note: note, walletId: walletId)
+                        let decimalChange = Decimal(change)
+                        return TransactionInfo(title: title, date: date, isOutcome: isOutcome, change: decimalChange, category: category, note: note, walletId: walletId)
                         
                     }
                     transactions.forEach { value in

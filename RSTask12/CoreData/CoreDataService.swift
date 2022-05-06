@@ -245,12 +245,9 @@ final class CoreDataService: NSObject, CoreDataServiceType {
         // Get today's beginning & end
         let dateFrom = calendar.startOfDay(for: Date())
         let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)!
-        // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
-
-        // Set predicate as date being today's date
-//        let fromPredicate = NSPredicate(format: "%@ >= %K", dateFrom as NSDate, #keyPath(Transaction.date))
-//        let toPredicate = NSPredicate(format: "%K < %@", #keyPath(Transaction.date), dateTo as NSDate)
-//        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+       let fromPredicate = NSPredicate(format: "%@ >= %K", dateFrom as NSDate, #keyPath(Transaction.date))
+        let toPredicate = NSPredicate(format: "%K < %@", #keyPath(Transaction.date), dateTo as NSDate)
+        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
         
         let fetchRequest = NSFetchRequest<Transaction>(entityName: "Transaction")
         //fetchRequest.predicate = datePredicate
